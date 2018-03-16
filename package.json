@@ -1,0 +1,19 @@
+{
+  "name": "@realmq/website",
+  "description": "Build bundle for the realmq website.",
+  "private": true,
+  "scripts": {
+    "build": "gulp build && hugo"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.0.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-hash": "^4.2.2",
+    "gulp-rev-all": "^0.9.7",
+    "gulp-sass": "^3.1.0",
+    "gulp-sort": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "node-sass-tilde-importer": "^1.0.1"
+  }
+}

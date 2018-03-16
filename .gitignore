@@ -1,0 +1,5 @@
+static/*
+!static/.gitkeep
+public/*
+node_modules
+yarn-error.log
