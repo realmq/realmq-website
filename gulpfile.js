@@ -1,6 +1,8 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const del = require('del');
+const rev = require('gulp-rev');
+const revReplace = require('gulp-rev-css-url');
 const tildeImporter = require('node-sass-tilde-importer');
 
 const paths = {
@@ -32,9 +34,20 @@ const watch = () => {
   gulp.watch(paths.images.src, copyImages);
 };
 
+const revision = () => gulp
+  .src([
+    'static/**/*.*',
+    `!static/**/*-${'[0-9a-f]'.repeat(10)}.*`,
+  ])
+    .pipe(rev())
+    .pipe(revReplace())
+    .pipe(gulp.dest('static'))
+    .pipe(rev.manifest('assets.json'))
+    .pipe(gulp.dest('data'));
+
 gulp.task('scss', buildStyles);
 gulp.task('images', copyImages);
 gulp.task('watch', ['scss', 'images'], watch);
 gulp.task('clean', clean);
-gulp.task('build', build);
-gulp.task('default', build);
+gulp.task('build', build, revision);
+gulp.task('default', build, revision);

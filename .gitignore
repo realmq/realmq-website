@@ -1,5 +1,9 @@
+# build artifacts
 static/*
 !static/.gitkeep
 public/*
+data/assets.json
+
+# node stuff
 node_modules
 yarn-error.log
