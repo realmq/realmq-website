@@ -6,28 +6,490 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <title>RealMQ — Coming soon</title>
+  <title>realmq — Communication Infrastructure</title>
 
   <link href="/{{ index .Site.Data.assets "css/theme.css" }}" rel="stylesheet">
   <link rel="icon" href="/{{ index .Site.Data.assets "img/favicon.png" }}">
 </head>
-<body>
+<body class="navbar-scrolled">
 
-<header class="header text-white h-fullscreen py-0" style="background-image: url(/{{ index .Site.Data.assets "img/coming-soon.jpg" }});" data-overlay="7">
-  <div class="container text-center">
-    <div class="row h-100 align-items-center">
-      <div class="col-lg-8 mx-auto">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" data-navbar="fixed">
+  <div class="container">
 
-        <h1 class="display-1 text-uppercase ls-3 fw-500">Coming soon</h1>
-        <br><br>
-        <p class="lead">
-          <b>RealMQ</b> is a highly scalable, privacy-compliant realtime communication backbone.<br>
-          Our focus is to deliver great service with the best possible integrability.<br>
-          You keep full control over your data. RealMQ is designed to runon premise.
+    <div class="navbar-left">
+      <button class="navbar-toggler" type="button">&#9776;</button>
+      <a class="navbar-brand" href="#">
+        <img class="logo-dark" src="/{{ index .Site.Data.assets "img/logo-dark.png" }}" alt="logo">
+      </a>
+    </div>
+
+    <section class="navbar-mobile">
+      <nav class="nav nav-navbar ml-auto">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#section-features">Features</a>
+        <a class="nav-link" href="#section-pricing">Pricing</a>
+        <a class="nav-link" href="#section-faq">FAQ</a>
+        <a class="nav-link" href="#contact-us">Contact</a>
+      </nav>
+    </section>
+
+  </div>
+</nav><!-- /.navbar -->
+
+
+<!-- Header -->
+<header id="home" class="header h-fullscreen" style="background-image: linear-gradient(150deg, #fdfbfb 0%, #eee 100%);">
+  <div class="container">
+    <div class="row align-items-center h-100">
+
+      <div class="col-md">
+        <h1 class="display-4"><strong>realmq</strong>;<br>Get realtime now!</h1>
+        <p class="lead mt-5">
+          Integrate our high-scale, privacy-compliant realtime communication backbone.
+          Our microservice solution is designed for on-premise operation in your infrastructure.
         </p>
+        <hr class="w-10 ml-0 my-7">
+        <a class="btn btn-lg btn-round btn-primary mr-2 w-200" href="#contact-us">Get in touch</a>
+        <a class="btn btn-lg btn-round btn-outline-primary w-200" href="#section-features">Features</a>
       </div>
     </div>
   </div>
-</header>
+</header><!-- /.header -->
+
+
+<!-- Main Content -->
+<main class="main-content">
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | Features
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section id="section-features" class="section">
+    <div class="container">
+      <header class="section-header">
+        <small>Feature</small>
+        <h2>Realtime backbone for your innovation</h2>
+        <hr>
+      </header>
+
+
+      <div class="row gap-y align-items-center">
+        <div class="col-md-6 ml-auto">
+          <h4>Channel Pipes</h4>
+          <p>
+            Channel Pipes are an advanced feature to control and manipulate data flows. Their base functionality is to route traffic from a list of source channels to a list of target channels.
+            A webhook on a pipe allows for filtering and routing the traffic on message level. Pipes are very handy for building any kind of automation on top of messaging (e.g. chatbots).
+          </p>
+        </div>
+
+        <div class="col-md-5 order-md-first">
+          <img src="http://via.placeholder.com/400x230/eef4fc" alt="...">
+        </div>
+      </div>
+
+
+      <hr class="my-8">
+
+
+      <div class="row gap-y align-items-center">
+        <div class="col-md-6 mr-auto">
+          <h4>End-to-end Encryption</h4>
+          <p>
+            We don’t enforce a specific content type for the messages that are sent between clients. It’s totally up to you to decide what the payload contains. This allows for easy integration of any kind of end-to-end encryption for messages. On top of our TLS this establishes an additional security layer. We will provide utility services and reference implementations for standard encryption schemes like libsignal in future.
+          </p>
+        </div>
+
+
+        <div class="col-md-5">
+          <img src="http://via.placeholder.com/400x230/eef4fc" alt="...">
+        </div>
+      </div>
+
+
+      <hr class="my-8">
+
+
+      <div class="row gap-y align-items-center">
+        <div class="col-md-6 ml-auto">
+          <h4>Integrations / Multi channel</h4>
+          <p>
+            In addition to Channel Pipes we provide a unified gateway interface for connecting our platform with other event and messaging systems. This adds the ability to trigger SMS,  email and push notifications upon channel events. Our APN and GCM/FCM integration guarantee message delivery even if a subscriber is not connected.
+          </p>
+        </div>
+
+        <div class="col-md-5 order-md-first">
+          <img src="http://via.placeholder.com/400x230/eef4fc" alt="...">
+        </div>
+      </div>
+
+      <hr class="my-8">
+
+
+      <div class="row gap-y align-items-center">
+        <div class="col-md-6 mr-auto">
+          <h4>End-to-end Encryption</h4>
+          <p>
+            We don’t enforce a specific content type for the messages that are sent between clients. It’s totally up to you to decide what the payload contains. This allows for easy integration of any kind of end-to-end encryption for messages. On top of our TLS this establishes an additional security layer. We will provide utility services and reference implementations for standard encryption schemes like libsignal in future.
+          </p>
+        </div>
+
+
+        <div class="col-md-5">
+          <img src="http://via.placeholder.com/400x230/eef4fc" alt="...">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | Features
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section class="section bg-gray">
+    <div class="container">
+      <div class="row gap-y">
+
+        <div class="col-lg-4">
+          <div class="card card-body border text-center">
+            <p class="my-5"><i class="icon-layers lead-8 text-lighter"></i></p>
+            <h5>Custom Ids</h5>
+            <p>
+              It’s just a little detail that manifests the seamless integration into your stack:
+              All API resources can be operated with optional custom ids.
+            </p>
+            <p><a class="small-3 fw-600" href="#">Read more <i class="fa fa-angle-right small-5 pl-1"></i></a></p>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4">
+          <div class="card card-body border text-center">
+            <p class="my-5"><i class="icon-chat lead-8 text-lighter"></i></p>
+            <h5>Multi-Tenancy / Projects</h5>
+            <p>Run our platform with multiple, isolated data containers. Our so-called Realms make it a breeze to setup clean separation of different applications and launch on-the-fly environments (like prod, test, demo).</p>
+            <p><a class="small-3 fw-600" href="#">Read more <i class="fa fa-angle-right small-5 pl-1"></i></a></p>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4">
+          <div class="card card-body border text-center">
+            <p class="my-5"><i class="icon-mic lead-8 text-lighter"></i></p>
+            <h5>SDKs</h5>
+            <p>The SDKs aim for seamless integration and hence provide you with a convenient interface for interacting with our platform and are first class helpers for building reactive realtime apps.</p>
+            <p><a class="small-3 fw-600" href="#">Read more <i class="fa fa-angle-right small-5 pl-1"></i></a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | CTA
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section class="section text-center">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <p><img src="http://via.placeholder.com/400x230/eef4fc" alt="..."></p>
+          <br>
+          <h3 class="mb-6"><strong>Focus on your business</strong></h3>
+          <p class="lead text-muted">
+            Our focus is to deliver great service with the best possible integrability
+            while you keep full control over your data - we can even run against your database.
+          </p>
+          <br>
+          <a class="btn btn-lg btn-round btn-success px-7" href="#">Start now</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | Pricing
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section id="section-pricing" class="section bg-gray">
+    <div class="container">
+      <header class="section-header">
+        <h2>Transparent Pricing</h2>
+        <hr>
+        <p class="lead">
+          Our microservice solution runs on docker and can be operated on-premise in your infrastructure.
+        </p>
+      </header>
+
+      <div class="row gap-y text-center">
+        <div class="col-md-4">
+          <div class="pricing-1">
+            <p class="plan-name">Sandbox</p>
+            <br>
+            <h2 class="price">free</h2>
+            <p class="small text-lighter">Forever!</p>
+
+            <div class="text-muted">
+              <small>Shared developer sandbox</small><br>
+              <small>Limited resources</small><br>
+            </div>
+
+            <br>
+            <p class="text-center py-3"><a class="btn btn-outline-primary" href="#">Get started</a></p>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="pricing-1 popular">
+            <p class="plan-name">Managed</p>
+            <br>
+            <h2 class="price text-success">
+              <span class="price-unit">From $</span>
+              <span>500</span>
+            </h2>
+            <p class="small text-lighter">
+              As a Service
+            </p>
+
+            <div class="text-muted">
+              <small>Runs on dedicated hardware</small><br>
+              <small>No limitations</small><br>
+              <small>Custom setup possible</small><br>
+            </div>
+
+            <br>
+            <p class="text-center py-3"><a class="btn btn-success" href="#">Get started</a></p>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="pricing-1">
+            <p class="plan-name">On Premise</p>
+            <br>
+            <h2 class="price">
+              <span class="price-unit">From $</span>
+              <span>3k</span>
+            </h2>
+            <p class="small text-lighter">
+              À la carte
+            </p>
+
+            <div class="text-muted">
+              <small>Runs on your servers</small><br>
+              <small>100% Compliance</small><br>
+              <small>Source Code Access</small><br>
+              <small>Custom SLA</small><br>
+            </div>
+
+            <br>
+            <p class="text-center py-3"><a class="btn btn-outline-primary" href="#">Get started</a></p>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | FAQ
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section id="section-faq" class="section">
+    <div class="container">
+      <header class="section-header">
+        <small>FAQ</small>
+        <h2>Frequently Asked Questions</h2>
+        <hr>
+        <p>Got a question? We've got answers. If you have some other questions, contact us using email.</p>
+      </header>
+
+
+      <div class="row gap-y">
+        <div class="col-md-6 col-xl-4">
+          <h5>Is this a secure site for purchases?</h5>
+          <p>Absolutely! We work with top payment companies which guarantees your safety and security. All billing information is stored on our payment processing partner which has the most stringent level of certification available in the payments industry.</p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4">
+          <h5>Can I cancel my subscription?</h5>
+          <p>You can cancel your subscription anytime in your account. Once the subscription is cancelled, you will not be charged next month. You will continue to have access to your account until your current subscription expires.</p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4">
+          <h5>How long are your contracts?</h5>
+          <p>Currently, we only offer monthly subscription. You can upgrade or cancel your monthly account at any time with no further obligation.</p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4">
+          <h5>Can I update my card details?</h5>
+          <p>Yes. Go to the billing section of your dashboard and update your payment information.</p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4">
+          <h5>Can I request refund?</h5>
+          <p>Unfortunately, not. We do not issue full or partial refunds for any reason.</p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4">
+          <h5>Can I try your service for free?</h5>
+          <p>Of course! We’re happy to offer a free plan to anyone who wants to try our service.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section bg-gray" id="contact-us">
+    <div class="container">
+      <h2 class="text-center">Let's Get In Touch</h2>
+      <form class="row gap-y mt-8" action="" method="POST">
+        <div class="col-lg-6">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input class="form-control form-control-lg" type="text" name="firstname" placeholder="First Name">
+            </div>
+
+            <div class="form-group col-md-6">
+              <input class="form-control form-control-lg" type="text" name="lastname" placeholder="Last Name">
+            </div>
+
+            <div class="form-group col-md-6">
+              <input class="form-control form-control-lg" type="email" name="email" placeholder="Email">
+            </div>
+
+            <div class="form-group col-md-6">
+              <input class="form-control form-control-lg" type="text" name="phone" placeholder="Phone">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control form-control-lg" rows="4" placeholder="What do you have in mind?" name="message"></textarea>
+          </div>
+
+          <button class="btn btn-lg btn-primary" type="submit">Send message</button>
+
+        </div>
+
+
+        <div class="col-lg-5 ml-auto text-center text-lg-left">
+          <hr class="d-lg-none">
+          <h5>realmq GmbH</h5>
+          <p>Residenzstraße 46, 13409 Berlin, Germany</p>
+          <p>+49 (176) 7866 4791</p>
+          <p>hello@realmq.com</p>
+          <div class="fw-400">Follow Us</div>
+          <div class="social social-sm social-inline">
+            <a class="social-twitter" href="#"><i class="fa fa-twitter"></i></a>
+            <a class="social-git" href="#"><i class="fa fa-github"></i></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | Subscribe
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section class="section py-7">
+    <div class="container">
+      <div class="row gap-y align-items-center">
+        <div class="col-md-6">
+          <p class="lead mb-0 text-center text-md-left">Subscribe to our newsletter and receive the latest news.</p>
+        </div>
+
+        <div class="col-md-4 ml-auto">
+          <form class="input-round justify-content-center justify-content-lg-end" action="" method="post" target="_blank">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+              </div>
+              <input type="text" name="EMAIL" class="form-control" placeholder="Email Address">
+              <span class="input-group-append">
+                    <button class="btn btn-info">Subscribe</button>
+                  </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+
+<!-- Footer -->
+<footer id="footer" class="footer py-9">
+  <div class="container">
+    <div class="row gap-y">
+
+      <div class="col-xl-4 order-md-last">
+        <h6 class="mb-4"><strong>Get Started</strong></h6>
+        <p>Form so, head allowed how found at right, chosen put sad. Copy of field phase offers texts. Great family there first about that.</p>
+        <a class="btn btn-primary mr-2" href="#">Start trial</a>
+        <a class="btn btn-secondary" href="#">Contact</a>
+      </div>
+
+      <div class="col-6 col-md-4 col-xl-2">
+        <h6 class="mb-4"><strong>Product</strong></h6>
+        <div class="nav flex-column">
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="#">Security</a>
+          <a class="nav-link" href="#">Help</a>
+          <a class="nav-link" href="#">Success Story</a>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-xl-2">
+        <h6 class="mb-4"><strong>Company</strong></h6>
+        <div class="nav flex-column">
+          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link" href="#">Press</a>
+          <a class="nav-link" href="#">Policy</a>
+          <a class="nav-link" href="#">Contact</a>
+        </div>
+      </div>
+
+      <div class="col-xl-4 order-md-first">
+        <h6 class="mb-4"><strong>We Are Awesome</strong></h6>
+        <p>We’re a team of experienced designers and developers. We can combine beautiful, modern designs with clean, functional and high-performance code to produce stunning websites.</p>
+        <small class="opacity-70">© 2018 realmq GmbH. All rights reserved.</small>
+      </div>
+
+    </div>
+  </div>
+</footer><!-- /.footer -->
+
+
+<!-- Scroll top -->
+<button class="btn btn-circle btn-primary scroll-top"><i class="fa fa-angle-up"></i></button>
+
 </body>
 </html>
