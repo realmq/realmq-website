@@ -18,7 +18,7 @@ const paths = {
 
 const buildStyles = () => gulp
   .src(paths.styles.src)
-  .pipe(sass({ outputStyle : "compressed", importer: tildeImporter }))
+  .pipe(sass({ outputStyle : 'compressed', importer: tildeImporter }))
   .pipe(gulp.dest(paths.styles.dest));
 
 const copyImages = () => gulp
@@ -26,13 +26,6 @@ const copyImages = () => gulp
   .pipe(gulp.dest(paths.images.dest));
 
 const clean = () => del([paths.styles.dest, paths.images.dest]);
-
-const build = ['clean', 'scss', 'images'];
-
-const watch = () => {
-  gulp.watch(paths.styles.src, buildStyles);
-  gulp.watch(paths.images.src, copyImages);
-};
 
 const revision = () => gulp
   .src([
@@ -45,9 +38,21 @@ const revision = () => gulp
     .pipe(rev.manifest('assets.json'))
     .pipe(gulp.dest('data'));
 
+const watch = () => gulp.watch(
+  [paths.styles.src, paths.images.src],
+  { ignoreInitial: false },
+  build
+).on('error', () => {});
+
+
+
+gulp.task('revision', revision);
 gulp.task('scss', buildStyles);
 gulp.task('images', copyImages);
-gulp.task('watch', ['scss', 'images'], watch);
 gulp.task('clean', clean);
-gulp.task('build', build, revision);
-gulp.task('default', build, revision);
+
+const build = gulp.series('clean', gulp.parallel('scss', 'images'), 'revision');
+
+gulp.task('build', build);
+gulp.task('default', build);
+gulp.task('watch', watch);
