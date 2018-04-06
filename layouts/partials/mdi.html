@@ -1,0 +1,4 @@
+{{- $iconName := printf "node_modules/@mdi/svg/svg/%s.svg" .name -}}
+{{- $rawIcon := readFile $iconName }}
+
+{{ (index (findRE "<svg.*</svg>" $rawIcon) 0) | safeHTML }}

@@ -19,6 +19,10 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
+"@mdi/svg@^2.2.43":
+  version "2.2.43"
+  resolved "https://registry.yarnpkg.com/@mdi/svg/-/svg-2.2.43.tgz#8ea2c4bec52d7a25b82265b9357303174189cb51"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
