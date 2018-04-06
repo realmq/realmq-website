@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 // RealMQ customization
-@import "custom";
+@import "variables";
 
 
 // Core
@@ -106,3 +106,6 @@
 @import "../thesaas/scss/utility/spacing";
 @import "../thesaas/scss/utility/typography";
 @import "../thesaas/scss/utility/inverse";
+
+// RealMQ customization
+@import "custom";
