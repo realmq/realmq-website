@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "gulp build && hugo",
-    "dev": "gulp watch | hugo server"
+    "dev": "gulp watch | hugo -v server"
   },
   "devDependencies": {
     "bootstrap": "^4.0.0",
