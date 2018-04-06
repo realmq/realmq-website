@@ -6,6 +6,24 @@
   color: lighten($color-primary, 40%);
 }
 
+.navbar {
+  .navbar-brand {
+    .logo {
+      height: 32px;
+      margin: 3px 3px 3px 0;
+    }
+  }
+}
+
+.header {
+  h1 {
+    .logo {
+      height: 76px;
+      margin: 12px 12px 12px 0;
+    }
+  }
+}
+
 .header.birdies {
   background-image: url(../img/3-little-birds.jpg);
 }
