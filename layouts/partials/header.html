@@ -1,0 +1,8 @@
+<header class="header text-center pb-6 pt-9 bg-primary text-white">
+  <div class="container">
+    <h1 class="display-4">{{ .Title }}</h1>
+    {{ if .Param "subtitle" }}
+      <p class="lead-2">{{ .Param "subtitle" }}</p>
+    {{ end }}
+  </div>
+</header>

@@ -1,3 +1,8 @@
 baseurl = "https://realmq.com/"
 languageCode = "en-us"
 title = "RealMQ Homepage"
+copyright = "© 2018 RealMQ GmbH. All rights reserved."
+
+enableEmoji = true
+pygmentsCodeFences = true
+pygmentsStyle = "trac"

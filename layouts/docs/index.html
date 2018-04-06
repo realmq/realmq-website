@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main class="main-content">
+  <section class="section">
+    <div class="container">
+      <div class="row gap-y">
+        {{- range .Site.Menus.docs_home -}}
+          <div class="col-md-6 col-lg-3">
+            <a class="card card-body border hover-shadow-6 text-center py-6" href="{{ .URL }}">
+              {{ if .Pre }}
+                <p>
+                  <i>
+                    {{ partial "mdi" (dict "name" .Pre) }}
+                  </i>
+                </p>
+              {{ end }}
+              <h5 class="mb-0">{{ .Name }}</h5>
+            </a>
+          </div>
+        {{- end -}}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

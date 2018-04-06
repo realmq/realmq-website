@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="{{ .Param "description" }}">
+  <meta name="keywords" content="">
+
+  {{- block "page-title" . -}}
+    <title>{{ .Title }} | RealMQ</title>
+  {{- end -}}
+
+  <link href="/{{ index .Site.Data.assets "css/theme.css" }}" rel="stylesheet">
+  <link rel="icon" href="/{{ index .Site.Data.assets "img/favicon.png" }}">
+</head>
+<body class="navbar-scrolled">
+
+<nav class="navbar navbar-expand-lg navbar-dark" data-navbar="fixed">
+  <div class="container">
+
+    <div class="navbar-left">
+      <button class="navbar-toggler" type="button">&#9776;</button>
+      <a class="navbar-brand" href="/">
+        <span class="text-dark">Home</span>
+      </a>
+    </div>
+
+    <section class="navbar-mobile">
+      <nav class="nav nav-navbar ml-auto">
+        <a class="nav-link active" href="/docs">Documentation</a>
+      </nav>
+    </section>
+
+  </div>
+</nav>
+
+{{- block "header" . -}}
+  {{ partial "header.html" . }}
+{{- end -}}
+
+{{- block "main" . -}}
+<main class="main-content">
+  {{ .Content }}
+</main>
+{{- end -}}
+
+{{- block "footer" . -}}
+  {{ partial "footer.html" . }}
+{{- end -}}
+
+</body>
+</html>
