@@ -1,0 +1,17 @@
+
+//----------------------------------------------------/
+// RealMQ Variables
+//----------------------------------------------------/
+$color-primary: #3cd458 !default;
+
+.text-primary-light {
+  color: lighten($color-primary, 40%);
+}
+
+.header.birdies {
+  background-image: url(../img/3-little-birds.jpg);
+}
+
+.feature-icon-large i {
+  font-size: 27em;
+}
