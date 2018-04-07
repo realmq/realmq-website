@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-{{if .theme}}{{.theme}}{{else}}dark{{end}}" {{ if .isNavFixed }}data-navbar="fixed"{{end}}>
+  <div class="container">
+
+    <div class="navbar-left">
+      <button class="navbar-toggler" type="button">&#9776;</button>
+      <a class="navbar-brand" href="/">
+        <img class="logo" src="/{{ .logo }}" alt="RealMQ">
+      </a>
+    </div>
+
+    <section class="navbar-mobile">
+      <nav class="nav nav-navbar ml-auto">
+        <a class="nav-link" href="/#home">Home</a>
+        <a class="nav-link" href="/#section-features">Features</a>
+        <a class="nav-link" href="/#section-use-cases">Use Cases</a>
+        <a class="nav-link" href="/#section-pricing">Pricing</a>
+        <a class="nav-link" href="/#contact-us">Contact</a>
+        <a class="nav-link" href="/docs">Docs</a>
+      </nav>
+    </section>
+
+  </div>
+</nav>
