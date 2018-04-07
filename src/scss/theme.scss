@@ -1,5 +1,9 @@
 @charset 'UTF-8';
 
+// RealMQ customization
+@import "variables";
+
+
 // Core
 //
 @import "../thesaas/scss/functions";
@@ -14,9 +18,9 @@
 //@import "../thesaas/scss/vendor/constellation";
 //@import "../thesaas/scss/vendor/countdown";
 //@import "../thesaas/scss/vendor/countup";
-//@import "../thesaas/scss/vendor/fontawesome";
+@import "../thesaas/scss/vendor/fontawesome";
 //@import "../thesaas/scss/vendor/fontawesome5";
-//@import "../thesaas/scss/vendor/et-line-icon";
+@import "../thesaas/scss/vendor/et-line-icon";
 //@import "../thesaas/scss/vendor/themify-icons";
 //@import "../thesaas/scss/vendor/jarallax";
 //@import "../thesaas/scss/vendor/slick";
@@ -102,3 +106,6 @@
 @import "../thesaas/scss/utility/spacing";
 @import "../thesaas/scss/utility/typography";
 @import "../thesaas/scss/utility/inverse";
+
+// RealMQ customization
+@import "custom";

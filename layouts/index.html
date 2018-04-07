@@ -6,28 +6,426 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <title>RealMQ — Coming soon</title>
+  <title>RealMQ — Realtime Messaging on Premise</title>
 
   <link href="/{{ index .Site.Data.assets "css/theme.css" }}" rel="stylesheet">
   <link rel="icon" href="/{{ index .Site.Data.assets "img/favicon.png" }}">
 </head>
-<body>
+<body class="navbar-scrolled">
 
-<header class="header text-white h-fullscreen py-0" style="background-image: url(/{{ index .Site.Data.assets "img/coming-soon.jpg" }});" data-overlay="7">
-  <div class="container text-center">
-    <div class="row h-100 align-items-center">
-      <div class="col-lg-8 mx-auto">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" data-navbar="fixed">
+  <div class="container">
 
-        <h1 class="display-1 text-uppercase ls-3 fw-500">Coming soon</h1>
-        <br><br>
-        <p class="lead">
-          <b>RealMQ</b> is a highly scalable, privacy-compliant realtime communication backbone.<br>
-          Our focus is to deliver great service with the best possible integrability.<br>
-          You keep full control over your data. RealMQ is designed to run on premise.
+    <div class="navbar-left">
+      <button class="navbar-toggler" type="button">&#9776;</button>
+      <a class="navbar-brand" href="/">
+        <img class="logo" src="/{{ index .Site.Data.assets "img/logo.svg" }}" alt="RealMQ">
+      </a>
+    </div>
+
+    <section class="navbar-mobile">
+      <nav class="nav nav-navbar ml-auto">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#section-features">Features</a>
+        <a class="nav-link" href="#section-use-cases">Use Cases</a>
+        <a class="nav-link" href="#section-pricing">Pricing</a>
+        <a class="nav-link" href="#contact-us">Contact</a>
+      </nav>
+    </section>
+
+  </div>
+</nav><!-- /.navbar -->
+
+<!-- Header -->
+<header id="home" class="header h-fullscreen birdies">
+  <div class="container">
+    <div class="row align-items-center h-100">
+      <div class="col-md">
+        <h1 class="display-4">
+          <img class="logo" src="/{{ index .Site.Data.assets "img/logo.svg" }}" alt="RealMQ"><br>
+          Realtime messaging on premise
+        </h1>
+        <p class="lead mt-5">
+          RealMQ is a highly scalable, privacy-compliant realtime communication backbone.
+          Our focus is to deliver great service with best possible integrability
+          while you keep full control over your data.
         </p>
+        <a class="btn btn-lg btn-round btn-primary mr-2 w-200 my-7" href="#contact-us">Get in touch</a>
+        <a class="btn btn-lg btn-round btn-outline-primary w-200 my-7" href="#section-use-cases">Use cases</a>
       </div>
     </div>
   </div>
-</header>
+</header><!-- /.header -->
+
+<!-- Main Content -->
+<main class="main-content">
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | Core features
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section id="section-features" class="section">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="text-primary">What we can do for you</h2>
+        <hr>
+        <p class="lead">
+          RealMQ is your building block to add modern and reliable realtime messaging to your applications.
+          We offer full GDRP compliance and even better - we come on premise (if you want).
+          Running RealMQ on your own infrastructure, you have complete control on what data is stored,
+          and where. Additionally our licensing model includes full source code access. Our main goal is
+          to enable messaging in your application &ndash; your business, your rules.
+        </p>
+      </header>
+
+      <div class="row gap-y text-center">
+
+        <div class="col-md-6 col-xl-4 feature-1">
+          <p class="feature-icon text-primary"><i class="icon-shield"></i></p>
+          <h5>Privacy / GDPR</h5>
+          <p>
+            RealMQ is fully GDPR compliant, based in Germany and therefore adheres to German and EU
+            privacy regulations. Our infrastructure is located in the EU.
+          </p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4 feature-1">
+          <p class="feature-icon text-warning"><i class="icon-lock"></i></p>
+          <h5>Data Ownership</h5>
+          <p>
+            You have full control over your data and decide what is stored how, when, and where.
+          </p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4 feature-1">
+          <p class="feature-icon text-info"><i class="icon-expand"></i></p>
+          <h5>Integration</h5>
+          <p>
+            RealMQ integrates seamlessly with any application stack. We provide SDKs for all relevant
+            platforms.
+          </p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4 offset-xl-2 feature-1">
+          <p class="feature-icon text-danger"><i class="icon-tools"></i></p>
+          <h5>Customization</h5>
+          <p>Do you need custom functionality? We make it happen for you.</p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4 feature-1">
+          <p class="feature-icon text-dark"><i class="icon-download"></i></p>
+          <h5>Dedicated / On premise</h5>
+          <p>
+            RealMQ can run as fully managed dedicated service or on premise on your infrastructure.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | Use case scenarios
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section id="section-use-cases" class="section bg-gray">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="text-primary">Common Use Cases</h2>
+        <hr>
+      </header>
+
+      <div class="row">
+        <div class="col-md-6">
+          <p class="feature-icon-large text-center text-primary-light"><i class="fa fa-comments-o"></i></p>
+        </div>
+        <div class="col-md-6 text-justify">
+          <h4>Chat</h4>
+          <p>
+            If asked for a use case for realtime messaging most people will answer: chat! Traditional
+            chat systems are a natural fit for RealMQ. It just needs a thin business layer on top of
+            RealMQ and some smart client side semantics. Luckily we provide some expressive recipes
+            and reference implementations.
+          </p>
+          <dl>
+            <dt>Instant Messaging</dt>
+            <dd>
+              Connect your users with direct chat and some social flavour to your application.
+              Create classic instant messaging experiences we all know, like WhatsApp and co.
+            </dd>
+
+            <dt>Group Chat</dt>
+            <dd>
+              Build chat systems for organizations and communities and their internal peer groups.
+            </dd>
+
+            <dt>In Game Chat</dt>
+            <dd>
+              Let the users of your online games chat with each other in lobbies and running game sessions.
+            </dd>
+
+            <dt>Bots</dt>
+            <dd>
+              Automated chat systems help you to build a faster and more responsive communication with your users.
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <hr class="my-8">
+
+      <div class="row gap-y align-items-center">
+        <div class="col-md-6 text-justify">
+          <h4>Complex Role Based Chat Systems</h4>
+          <p>
+            Sometimes classic chat tools aren’t enough. You may want to dispatch support requests,
+            implement a multi stage flow with alternating chat partners, or build an interactive
+            chat menu to route the chat to the right department. With RealMQ you can implement all
+            of them - the limit is your imagination.
+          </p>
+          <dl>
+            <dt>Routing</dt>
+            <dd>
+              Build interactive support systems where incoming requests are automatically dispatched
+              to available members of your support team.
+            </dd>
+
+            <dt>Multi Channel</dt>
+            <dl>
+              Receive and send messages over a wide variety of channels like SMS, Email, or Twitter
+            </dl>
+
+            <dt>Complex Flows</dt>
+            <dl>
+              Project complex customer journeys onto something simple like a chat. Alternating chat
+              partners guide the customer through relevant stages of a sales conversation.
+            </dl>
+          </dl>
+        </div>
+
+        <div class="col-md-6">
+          <p class="feature-icon-large text-center text-primary-light"><i class="fa fa-users"></i></p>
+        </div>
+      </div>
+
+      <hr class="my-8">
+
+      <div class="row gap-y align-items-center">
+        <div class="col-md-6">
+          <p class="feature-icon-large text-center text-primary-light"><i class="fa fa-bolt"></i></p>
+        </div>
+        <div class="col-md-6 text-justify">
+          <h4>Realtime Events</h4>
+          <p>
+            Today people are used to real time updates and immediate notifications on important
+            events. They expect instant feedback on all their devices like mobile phone, laptop, or
+            tablet when interacting with the digital world. Realtime events are the key.
+          </p>
+
+          <dl>
+            <dt>Location Updates</dt>
+            <dd>
+              Keep clients updated on their delivery status and tell them the exact position of an
+              ordered item.
+            </dd>
+
+            <dt>Realtime Databases</dt>
+            <dd>
+              Synchronize data accross multiple distributed devices.
+            </dd>
+
+            <dt>eCommerce</dt>
+            <dd>
+              Show visitors on your shop website realtime updates on prices, special offers, or other
+              relevant information to turn them into happy customers.
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <hr class="my-8">
+
+      <div class="row gap-y align-items-center">
+        <div class="col-md-6 text-justify">
+          <h4>Signaling / IoT</h4>
+          <p>
+            In a world where everything is connected, more and more devices are able to participate
+            in the Internet of Things. RealMQ's slim and battle proven MQTT protocol ensures that
+            your devices can talk to each other.
+          </p>
+          <dl>
+            <dt>Home Automation</dt>
+            <dd>
+              Smart home devices talk to each other and synchronize data.
+              E.g. ‘Turn down the heating when the temperature rises’.
+            </dd>
+
+            <dt>Smart Sensors</dt>
+            <dd>
+              Measure air quality or water levels and forward results to your central data collector.
+            </dd>
+
+            <dt>Predictive Maintenance</dt>
+            <dd>
+              Let your devices tell you when they are about to break.
+            </dd>
+          </dl>
+        </div>
+
+        <div class="col-md-6">
+          <p class="feature-icon-large text-center text-primary-light"><i class="fa fa-lightbulb-o"></i></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | Pricing
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section id="section-pricing" class="section">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="text-primary">Transparent Pricing</h2>
+      </header>
+
+      <div class="row gap-y text-center">
+        <div class="col-md-4">
+          <div class="pricing-1">
+            <p class="plan-name">Sandbox</p>
+            <br>
+            <h2 class="price">free</h2>
+            <p class="small text-lighter">Forever!</p>
+
+            <div class="text-muted">
+              <small>Shared developer sandbox</small><br>
+              <small>Limited resources</small><br>
+            </div>
+
+            <br>
+            <p class="text-center py-3"><a class="btn btn-outline-primary" href="#contact-us">Get started</a></p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pricing-1 popular">
+            <p class="plan-name">Managed</p>
+            <br>
+            <h2 class="price text-success">
+              <span class="price-unit">From $</span>
+              <span>500</span>
+            </h2>
+            <p class="small text-lighter">
+              As a Service
+            </p>
+
+            <div class="text-muted">
+              <small>Runs on dedicated hardware</small><br>
+              <small>No limitations</small><br>
+              <small>Custom setup possible</small><br>
+            </div>
+
+            <br>
+            <p class="text-center py-3"><a class="btn btn-success" href="#contact-us">Get started</a></p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pricing-1">
+            <p class="plan-name">On Premise</p>
+            <br>
+            <h2 class="price">
+              <span class="price-unit">From $</span>
+              <span>3k</span>
+            </h2>
+            <p class="small text-lighter">
+              À la carte
+            </p>
+
+            <div class="text-muted">
+              <small>Runs on your servers</small><br>
+              <small>100% Compliance</small><br>
+              <small>Source Code Access</small><br>
+              <small>Custom SLA</small><br>
+            </div>
+
+            <br>
+            <p class="text-center py-3"><a class="btn btn-outline-primary" href="#contact-us">Get started</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | Contact
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section class="section bg-gray" id="contact-us">
+    <div class="container">
+      <h2 class="text-center text-primary">Sounds interesting to you? We'd love to get in touch.</h2>
+      <form class="row gap-y mt-8" netlify>
+        <div class="col-lg-6">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input class="form-control form-control-lg" type="text" name="name" placeholder="Name">
+            </div>
+
+            <div class="form-group col-md-6">
+              <input class="form-control form-control-lg" type="email" name="email" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control form-control-lg" rows="4" placeholder="Tell us what you think." name="message"></textarea>
+          </div>
+
+          <button class="btn btn-lg btn-primary" type="submit">Send message</button>
+        </div>
+
+        <div class="col-lg-5 ml-auto text-center text-lg-left">
+          <hr class="d-lg-none">
+          <h5>RealMQ GmbH</h5>
+          <address>
+            <i class="fa fa-globe"></i> Residenzstraße 46, 13409 Berlin, Germany<br>
+            <i class="fa fa-phone"></i> +49 (176) 7866 4791<br>
+            <i class="fa fa-envelope"></i> <a href="mailto:service@realmq.com">service@realmq.com</a>
+          </address>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer" class="footer py-7">
+  <div class="container">
+    <div class="row gap-y align-items-center">
+      <div class="col-12">
+        <hr class="my-0">
+      </div>
+
+      <div class="col-12 text-center">
+        <small class="opacity-70">© 2018 RealMQ GmbH. All rights reserved.</small>
+      </div>
+    </div>
+  </div>
+</footer><!-- /.footer -->
+
+<!-- Scroll top -->
+<button class="btn btn-circle btn-primary scroll-top"><i class="fa fa-angle-up"></i></button>
+
 </body>
 </html>
