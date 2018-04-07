@@ -1,0 +1,21 @@
+<aside class="sidebar">
+  <nav class="nav flex-column">
+    {{- $currentPage := . -}}
+    {{ range .Site.Menus.docs }}
+      {{ if .HasChildren }}
+        <h6 class="sidebar-title mb-1">{{ .Name }}</h6>
+        <nav class="sub-nav mb-4">
+          {{ range .Children }}
+            <a href="{{ .URL }}" class='nav-link {{if $currentPage.IsMenuCurrent "docs" .}}active{{end}}'>{{ .Name }}</a>
+          {{ end }}
+        </nav>
+      {{else}}
+        <li>
+          <a href="{{.URL}}">
+            <span>{{ .Name }}</span>
+          </a>
+        </li>
+      {{end}}
+    {{end}}
+  </nav>
+</aside>
