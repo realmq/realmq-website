@@ -7,14 +7,13 @@
         <nav class="sub-nav mb-4">
           {{ range .Children }}
             <a href="{{ .URL }}" class='nav-link {{if $currentPage.IsMenuCurrent "docs" .}}active{{end}}'>{{ .Name }}</a>
+            {{ if $currentPage.IsMenuCurrent "docs" . }}
+              {{ partial "table-of-contents" $currentPage }}
+            {{ end }}
           {{ end }}
         </nav>
       {{else}}
-        <li>
-          <a href="{{.URL}}">
-            <span>{{ .Name }}</span>
-          </a>
-        </li>
+        <a href="{{ .URL }}" class='nav-link {{if $currentPage.IsMenuCurrent "docs" .}}active{{end}}'>{{ .Name }}</a>
       {{end}}
     {{end}}
   </nav>

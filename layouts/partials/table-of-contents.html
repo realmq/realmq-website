@@ -1,0 +1,27 @@
+<!-- ignore empty links with + -->
+{{ $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content }}
+<!-- at least one header to link to -->
+{{ $has_headers := ge (len $headers) 1 }}
+
+{{ if $has_headers }}
+
+{{ $paddingCls := (slice "pl-0" "pl-2" "pl-2" "pl-4" "pl-5" "pl-5" "pl-5") }}
+{{ $page := . }}
+<nav class="nav flex-column table-of-contents">
+ {{ range $headers }}
+  {{ $header := . }}
+  {{ range first 1 (findRE "<h[1-6]" $header 1) }}
+    {{ range findRE "[1-6]" . 1 }}
+      {{ $level := (int .) }}
+
+      {{ $base := (printf "%s%s" $page.URL $page.File.LogicalName) }}
+      {{ $anchorId := ($header | plainify | htmlEscape | urlize) }}
+      {{ $href := delimit (slice $base $anchorId) "#" | string }}
+      <a href="{{ relref $page $href }}" class="nav-link {{ index $paddingCls $level }}">
+        {{ $header | plainify | htmlEscape }}
+      </a>
+    {{end}}
+  {{end}}
+  {{ end }}
+</nav>
+{{ end }}
