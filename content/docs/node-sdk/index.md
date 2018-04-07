@@ -154,3 +154,92 @@ await realmq.rtm.publish({ channel: 'test-channel', message });
 
 :point_right: **Note**: Non String or Buffer messages will be automatically JSON encoded.<br>
 :point_right: **Note**: Publish will fail if you do not have a write-enabled subscription on that channel.
+
+---
+
+## Channels
+
+### Create a channel
+
+<span class="badge badge-pill badge-dark">Admin</span>
+
+```js
+const channel1 = await realmq.channels.create();
+const channel2 = await realmq.channels.create({ id: 'awesome-channel' });
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| **id**<br>_(optional)_ | see [Custom Ids](/docs/knowledge-base/#custom-ids) |
+| **properties**<br>_(optional)_ | see [Custom Properties](/docs/knowledge-base/#custom-properties) |
+{{% /themify %}}
+
+### Retrieve a channel
+
+<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-dark">User</span>
+
+```js
+const channel = await realmq.channels.retrieve('channel-id');
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| **channelId** | String |
+{{% /themify %}}
+
+### List all accessible channels
+
+<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-dark">User</span>
+
+Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of [Channels](/docs/knowledge-base/#chat-resource).
+
+```js
+const channelList1 = await realmq.channels.list();
+const channelList2 = await realmq.channels.list({ limit: 5, offset: 5 });
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| **offset**<br>_(optional)_ | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+| **limit**<br>_(optional)_ | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+{{% /themify %}}
+
+### Update a channel
+
+<span class="badge badge-pill badge-dark">Admin</span>
+
+```js
+const channel = await realmq.channels.update('channel-id', [
+  {
+    op: 'replace',
+    path: '/properties/memberCount',
+    value: 47
+  }
+]);
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| **channelId** | String |
+| **patch** | Array - Update channel properties via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
+{{% /themify %}}
+
+### Remove a channel
+
+<span class="badge badge-pill badge-dark">Admin</span>
+
+```js
+const channel = await realmq.channels.remove('channel-id');
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| **channelId** | String |
+{{% /themify %}}
