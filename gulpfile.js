@@ -15,7 +15,10 @@ const paths = {
     dest: 'static/img',
   },
   fonts: {
-    src: 'src/fonts/**/*',
+    src: [
+      'node_modules/et-line/fonts/**/*',
+      'node_modules/font-awesome/fonts/**/*'
+    ],
     dest: 'static/fonts',
   },
 };
