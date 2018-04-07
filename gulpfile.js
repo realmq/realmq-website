@@ -14,6 +14,13 @@ const paths = {
     src: 'src/img/**/*',
     dest: 'static/img',
   },
+  fonts: {
+    src: [
+      'node_modules/et-line/fonts/**/*',
+      'node_modules/font-awesome/fonts/**/*'
+    ],
+    dest: 'static/fonts',
+  },
 };
 
 const buildStyles = () => gulp
@@ -24,6 +31,10 @@ const buildStyles = () => gulp
 const copyImages = () => gulp
   .src(paths.images.src)
   .pipe(gulp.dest(paths.images.dest));
+
+const copyFonts = () => gulp
+  .src(paths.fonts.src)
+  .pipe(gulp.dest(paths.fonts.dest));
 
 const clean = () => del([paths.styles.dest, paths.images.dest]);
 
@@ -39,7 +50,11 @@ const revision = () => gulp
     .pipe(gulp.dest('data'));
 
 const watch = () => gulp.watch(
-  [paths.styles.src, paths.images.src],
+  [
+    paths.styles.src,
+    paths.images.src,
+    paths.fonts.src,
+  ],
   { ignoreInitial: false },
   build
 ).on('error', () => {});
@@ -49,9 +64,10 @@ const watch = () => gulp.watch(
 gulp.task('revision', revision);
 gulp.task('scss', buildStyles);
 gulp.task('images', copyImages);
+gulp.task('fonts', copyFonts);
 gulp.task('clean', clean);
 
-const build = gulp.series('clean', gulp.parallel('scss', 'images'), 'revision');
+const build = gulp.series('clean', gulp.parallel('scss', 'images', 'fonts'), 'revision');
 
 gulp.task('build', build);
 gulp.task('default', build);

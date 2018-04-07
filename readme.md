@@ -24,6 +24,14 @@ $ yarn
 $ npm i
 ```
 
+Then build the project:
+
+```bash
+$ yarn build
+# or
+$ npm run build
+```
+
 Finally run the dev pipeline with live reload upon file change.
 
 ```bash
