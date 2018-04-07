@@ -15,7 +15,7 @@
 </head>
 <body>
 
-{{ partial "navbar.html" (dict "logo" (index .Site.Data.assets "img/logo.svg") "isNavFixed" false "theme" "light") }}
+{{ partial "navbar.html" (dict "logo" (index .Site.Data.assets "img/logo-inverted.svg") "isNavFixed" false "theme" "light") }}
 
 {{- block "header" . -}}
   {{ partial "header.html" . }}
