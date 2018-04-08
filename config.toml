@@ -1,3 +1,4 @@
 baseurl = "https://realmq.com/"
 languageCode = "en-us"
 title = "RealMQ Homepage"
+enableRobotsTXT = true
