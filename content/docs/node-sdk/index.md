@@ -1,5 +1,6 @@
 ---
 title: Node SDK
+subtitle: <i class="fa fa-github"></i> <a href="https://github.com/realmq/realmq-node-sdk">realmq/realmq-node-sdk</span>
 menu:
   docs_home:
     name: Node SDK
@@ -7,17 +8,6 @@ menu:
   docs:
     parent: "SDKs"
     name: "Node SDK"
----
-
-Platform
-: Node.js
-
-Repository
-: https://github.com/realmq/realmq-node-sdk
-
-Use Cases
-: Administration, Backend business logic
-
 ---
 
 ## Getting Started
@@ -100,6 +90,8 @@ const realmq = new RealMQ(authToken, options);
 | {{< p "authToken" "String" >}} | A secret RealMQ auth token. |
 | {{< p "options" "Object" true >}} | |
 | {{< p "options.host" "String" true >}} | Set this if you run against a dedicated or on-premise deployment.<br>**Default**: realmq.com |
+| {{< p "options.autoConnect" "Boolean" true >}} | Calls `realmq.rtm.connect()` right away.<br>**Default**: false |
+| {{< p "options.autoSubscribe" "Boolean" true >}} | Calls `realmq.autoSubscribe()` right away.<br>👉 **Note**: This implies `autoConnect = true`.<br>**Default**: false |
 {{% /themify %}}
 
 ---

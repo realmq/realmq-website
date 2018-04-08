@@ -1,5 +1,6 @@
 ---
 title: "Web SDK"
+subtitle: <i class="fa fa-github"></i> <a href="https://github.com/realmq/realmq-web-sdk">realmq/realmq-web-sdk</span>
 menu:
   docs_home:
     name: Web SDK
@@ -8,15 +9,6 @@ menu:
     parent: "SDKs"
     name: "Web SDK"
 ---
-
-Platform
-: Javascript (Browser)
-
-Repository
-: https://github.com/realmq/realmq-web-sdk
-
-Use Cases
-: Browser Realtime Apps, Frontend
 
 ## Getting Started
 
