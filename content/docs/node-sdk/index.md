@@ -63,12 +63,12 @@ Use Cases
 
 * Our sdk utilizes promises where ever possible.
 * Convenient interfaces `retrieve`, `list`, `create`, `update` and `remove` methods.
-* `realmq.rtm` provides [realtime functionality](#realtime-gateway)
+* `realmq.rtm.*` provides [realtime functionality](#realtime-gateway)
 * Each api resource has its own namespace.
-    - `realmq.tokens.*`
-    - `realmq.channels.*`
-    - `realmq.users.*`
-    - `realmq.subscriptions.*`
+    - `realmq.channels.*` - ([Channel API](#channels))
+    - `realmq.subscriptions.*` - ([Subscription API](#subscriptions))
+    - `realmq.tokens.*` - ([Token API](#tokens))
+    - `realmq.users.*` - ([User API](#users))
 
 ---
 
@@ -336,6 +336,114 @@ const subscription = await realmq.subscriptions.remove('subscription-id');
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "subscriptionId" "String" >}} | |
+{{% /themify %}}
+
+---
+
+## Tokens
+
+### Create a token
+
+<span class="badge badge-pill badge-dark">Admin</span>
+
+Create a new auth token and passively create a new user if not existing yet.
+If you want to create an auth token for an existing user you have to pass its id as userId.<br>
+:point_right: **Note**: For unknown userId's or without providing a userId, a user is created and referenced on the fly.
+
+```js
+const user1 = await realmq.tokens.create();
+const user2 = await realmq.users.create({ id: 'my-token-id', userId: 'test-user', scope: 'user' });
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "id" "String" true >}} | An optional [Custom Ids](/docs/knowledge-base/#custom-ids) |
+| {{< p "userId" "String" true >}} |  An optional [User](/docs/knowledge-base/#user-resource) reference.<br> 👉 **Note**: User will be auto-created. |
+| {{< p "scope" "String" true >}} | Scope of the token. Possible values are `admin` and `user`.<br>**Default**: user |
+| {{< p "description" "String" true >}} | An optional auth token description. |
+{{% /themify %}}
+
+### Retrieve a token
+
+<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-dark">User</span>
+
+Find an auth token by its id.
+
+```js
+const user = await realmq.tokens.retrieve('token-id');
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "tokenId" "String" >}} | |
+{{% /themify %}}
+
+### List all tokens
+
+<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-dark">User</span>
+
+Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of [Tokens](/docs/knowledge-base/#auth-token-resource) of the current user,
+or realm-wide if the request is performed as admin.
+
+```js
+const userList1 = await realmq.tokens.list();
+const userList2 = await realmq.tokens.list({ limit: 5, offset: 5 });
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "offset" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+| {{< p "limit" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+{{% /themify %}}
+
+### Update a token
+
+<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-dark">User</span>
+
+Update auth token via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)).
+
+Patchable Fields
+: description
+
+
+```js
+const user = await realmq.tokens.update('token-id', [
+  {
+    op: 'replace',
+    path: '/description',
+    value: 'Session on Chrome Linux'
+  }
+]);
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "tokenId" "String" >}} | |
+| {{< p "patch" "Array" >}} | Update token description via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
+{{% /themify %}}
+
+### Remove a token
+
+<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-dark">User</span>
+
+Delete the auth token and invalidates the session.
+
+```js
+const user = await realmq.tokens.remove('token-id');
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "tokenId" "String" >}} | |
 {{% /themify %}}
 
 ---
