@@ -69,6 +69,38 @@ Use Cases
     - `realmq.subscriptions.*` - ([Subscription API](#subscriptions))
     - `realmq.tokens.*` - ([Token API](#tokens))
     - `realmq.users.*` - ([User API](#users))
+* There are two access groups (scopes). Every method has a description of what scopes are allowed to perform that action.
+    - <span class="badge badge-pill badge-dark">Admin</span> Full **management capabilities**, use for implementing your realtime **business logic**
+    - <span class="badge badge-pill badge-dark">User</span> **Restricted access**, use for logic **on behalf of a single user/device/bot**…
+
+---
+
+## Initialization
+
+Sdk initialization is a one-liner:
+```js
+const realmq = require('@realmq/node-sdk')('secret-auth-token');
+```
+
+Or you use the verbose version:
+
+```js
+const RealMQ = require('@realmq/node-sdk');
+
+const authToken = 'secret-auth-token';
+const options = {
+  host: 'realmq.your-tld.com'
+};
+const realmq = new RealMQ(authToken, options);
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "authToken" "String" >}} | A secret RealMQ auth token. |
+| {{< p "options" "Object" true >}} | |
+| {{< p "options.host" "String" true >}} | Set this if you run against a dedicated or on-premise deployment.<br>**Default**: realmq.com |
+{{% /themify %}}
 
 ---
 
