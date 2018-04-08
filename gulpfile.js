@@ -17,7 +17,7 @@ const paths = {
   fonts: {
     src: [
       'node_modules/et-line/fonts/**/*',
-      'node_modules/font-awesome/fonts/**/*'
+      'node_modules/@fortawesome/fontawesome-free-webfonts/webfonts/**/*'
     ],
     dest: 'static/fonts',
   },
