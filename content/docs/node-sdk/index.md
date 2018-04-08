@@ -171,8 +171,8 @@ const channel2 = await realmq.channels.create({ id: 'awesome-channel' });
 {{% themify %}}
 | Parameters |  |
 |-----------:|-------------|
-| **id**<br>_(optional)_ | see [Custom Ids](/docs/knowledge-base/#custom-ids) |
-| **properties**<br>_(optional)_ | see [Custom Properties](/docs/knowledge-base/#custom-properties) |
+| {{< p "id" "String" true >}} | see [Custom Ids](/docs/knowledge-base/#custom-ids) |
+| {{< p "properties" "Object" true >}} | see [Custom Properties](/docs/knowledge-base/#custom-properties) |
 {{% /themify %}}
 
 ### Retrieve a channel
@@ -187,7 +187,7 @@ const channel = await realmq.channels.retrieve('channel-id');
 {{% themify %}}
 | Parameters |  |
 |-----------:|-------------|
-| **channelId** | String |
+| {{< p "channelId" "String" >}} | |
 {{% /themify %}}
 
 ### List all accessible channels
@@ -205,8 +205,8 @@ const channelList2 = await realmq.channels.list({ limit: 5, offset: 5 });
 {{% themify %}}
 | Parameters |  |
 |-----------:|-------------|
-| **offset**<br>_(optional)_ | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
-| **limit**<br>_(optional)_ | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+| {{< p "offset" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+| {{< p "limit" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
 {{% /themify %}}
 
 ### Update a channel
@@ -226,8 +226,8 @@ const channel = await realmq.channels.update('channel-id', [
 {{% themify %}}
 | Parameters |  |
 |-----------:|-------------|
-| **channelId** | String |
-| **patch** | Array - Update channel properties via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
+| {{< p "channelId" "String" >}} | |
+| {{< p "patch" "Array" >}} | Update channel properties via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
 {{% /themify %}}
 
 ### Remove a channel
@@ -241,5 +241,186 @@ const channel = await realmq.channels.remove('channel-id');
 {{% themify %}}
 | Parameters |  |
 |-----------:|-------------|
-| **channelId** | String |
+| {{< p "channelId" "String" >}} | |
+{{% /themify %}}
+
+---
+
+## Subscriptions
+
+### Create a subscription
+
+<span class="badge badge-pill badge-dark">Admin</span>
+
+```js
+const subscription = await realmq.subscriptions.create({
+  channelId: 'test-channel',
+  userId: 'test-user',
+  allowRead: true
+});
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "id" "String" true >}} | An optional [Custom Id](/docs/knowledge-base/#custom-ids) |
+| {{< p "channelId" "String" true >}} | An optional [Channel](/docs/knowledge-base/#channel-resource) reference.<br> 👉 **Note**: Channel will be auto-created. |
+| {{< p "userId" "String" true >}} | An optional [User](/docs/knowledge-base/#user-resource) reference.<br> 👉 **Note**: User will be auto-created. |
+| {{< p "allowRead" "Boolean" true >}} | Whether the user will be able to receive channel messages. |
+| {{< p "allowWrite" "Boolean" true >}} | Whether the user will be able to publish messages to the channel. |
+{{% /themify %}}
+
+### Retrieve a subscription
+
+<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-dark">User</span>
+
+```js
+const subscription = await realmq.subscriptions.retrieve('subscription-id');
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "subscriptionId" "String" >}} | |
+{{% /themify %}}
+
+### List all subscriptions
+
+<span class="badge badge-pill badge-dark">User</span>
+
+Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of [Subscriptions](/docs/knowledge-base/#subscription-resource).
+
+```js
+const subscriptionList1 = await realmq.subscriptions.list();
+const subscriptionList2 = await realmq.subscriptions.list({ limit: 5, offset: 5 });
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "offset" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+| {{< p "limit" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+{{% /themify %}}
+
+### Update a subscription
+
+<span class="badge badge-pill badge-dark">Admin</span>
+
+```js
+const user = await realmq.subscriptions.update('subscription-id', [
+  {
+    op: 'replace',
+    path: '/allowRead',
+    value: true
+  }
+]);
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "subscriptionId" "String" >}} | |
+| {{< p "patch" "Array" >}} | Update user properties via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
+{{% /themify %}}
+
+### Remove a subscription
+
+<span class="badge badge-pill badge-dark">Admin</span>
+
+```js
+const subscription = await realmq.subscriptions.remove('subscription-id');
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "subscriptionId" "String" >}} | |
+{{% /themify %}}
+
+---
+
+## Users
+
+### Create a user
+
+<span class="badge badge-pill badge-dark">Admin</span>
+
+```js
+const user1 = await realmq.users.create();
+const user2 = await realmq.users.create({ id: 'awesome-user' });
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "id" "String" true >}} | An optional [Custom Ids](/docs/knowledge-base/#custom-ids) |
+| {{< p "properties" "Object" true >}} | A map of [Custom Properties](/docs/knowledge-base/#custom-properties) |
+{{% /themify %}}
+
+### Retrieve a user
+
+<span class="badge badge-pill badge-dark">Admin</span>
+
+```js
+const user = await realmq.users.retrieve('user-id');
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "userId" "String" >}} | |
+{{% /themify %}}
+
+### List all users
+
+<span class="badge badge-pill badge-dark">User</span>
+
+Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of [Users](/docs/knowledge-base/#user-resource).
+
+```js
+const userList1 = await realmq.users.list();
+const userList2 = await realmq.users.list({ limit: 5, offset: 5 });
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "offset" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+| {{< p "limit" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+{{% /themify %}}
+
+### Update a user
+
+<span class="badge badge-pill badge-dark">Admin</span>
+
+```js
+const user = await realmq.user.update('user-id', [
+  {
+    op: 'replace',
+    path: '/properties/avatar',
+    value: 'https://api.adorable.io/avatars/64/avatar.png'
+  }
+]);
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "userId" "String" >}} | |
+| {{< p "patch" "Array" >}} | - Update user properties via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
+{{% /themify %}}
+
+### Remove a user
+
+<span class="badge badge-pill badge-dark">Admin</span>
+
+```js
+const user = await realmq.users.remove('user-id');
+```
+
+{{% themify %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "userId" "String" >}} | |
 {{% /themify %}}
