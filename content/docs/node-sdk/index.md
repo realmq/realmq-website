@@ -45,6 +45,12 @@ menu:
         text: 'Welcome!'
       }
     });
+
+    // receive messages
+    realmq.rtm.on('message', (message) => {
+      console.warn(`received new message in channel: ${message.channel}`, message.data)
+    });
+
     ```
 
 ---
@@ -112,22 +118,24 @@ await realmq.rtm.connect();
 `realmq.rtm` emits the following events:
 
 * **connected**
+* **reconnected**
 * **disconnected**
-* **message-received**
+* **message**
+* **{channel}/message**
 * **message-sent**
 
 Lets register an event handler with `realmq.rtm.on`:
 
 ```js
-function onConnected() {}
+function onConnect() {}
 
-realmq.rtm.on('message-received', onConnected);
+realmq.rtm.on('connected', onConnect);
 ```
 
 You can remove event handlers with `realmq.rtm.un`:
 
 ```js
-realmq.rtm.un('message', onConnected);
+realmq.rtm.un('connected', onConnect);
 ```
 
 ### Subscribe to a channel
@@ -151,6 +159,31 @@ await realmq.rtm.unsubscribe({
   channel: 'test-channel'
 });
 ```
+
+### Receive messages
+
+Whenever a message hits the client, the sdk will emit message events.
+
+* `message` will be emitted for every message.
+* `{channel}/message` will be emitted for every message in a particular channel
+
+```js
+realmq.rtm.on('message', function messageHandler(message) {});
+realmq.rtm.on('some-channel/message', function channelMessageHandler(message) {});
+```
+
+The message object provides the following properties:
+
+{{% themify %}}
+| Message Properties |  |
+|-----------:|-------------|
+| {{< p "channel" "String" >}} | The channel in which the messag was published. |
+| {{< p "raw" "Buffer" >}} | The raw message buffer. |
+| {{< p "data" "Mixed" >}} | Contains the json decoded buffer data. |
+| {{< p "error" "Error" >}} | Only set if data was accessed and json decoding failed. |
+{{% /themify %}}
+
+:point_right: **Note**: If your messages contain binary, you should access `raw` instead of data. Otherwise a JSON Parse exception might be raised.
 
 ### Publish a message
 
@@ -176,7 +209,7 @@ const message = { ':heart:': 'Welcome!' };
 await realmq.rtm.publish({ channel: 'test-channel', message });
 ```
 
-:point_right: **Note**: Non String or Buffer messages will be automatically JSON encoded.<br>
+:point_right: **Note**: Non Buffer messages will be automatically JSON encoded.<br>
 :point_right: **Note**: Publish will fail if you do not have a write-enabled subscription on that channel.
 
 ---
