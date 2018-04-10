@@ -37,7 +37,7 @@ menu:
     // eg. load some data
     const channels = await realmq.channels.list();
 
-    // or connect to the realtime api
+    // or connect to the real-time API
     await realmq.rtm.connect();
     realmq.autoSubscribe();
     ```
@@ -49,14 +49,14 @@ menu:
 
 * Our SDK utilizes promises where ever possible.
 * Convenient interfaces `retrieve`, `list`, `create`, `update` and `remove` methods.
-* `realmq.rtm.*` provides [realtime functionality](#realtime-gateway)
-* Each api resource has its own namespace.
+* `realmq.rtm.*` provides [real-time functionality](#real-time-gateway)
+* Each API resource has its own namespace.
     - `realmq.channels.*` - ([Channel API](#channels))
     - `realmq.subscriptions.*` - ([Subscription API](#subscriptions))
     - `realmq.tokens.*` - ([Token API](#tokens))
     - `realmq.users.*` - ([User API](#users))
 * There are two access groups (scopes). Every method has a description of what scopes are allowed to perform that action.
-    - <span class="badge badge-pill badge-primary">Admin</span> Full **management capabilities**, use for implementing your realtime **business logic**
+    - <span class="badge badge-pill badge-primary">Admin</span> Full **management capabilities**, use for implementing your real-time **business logic**
     - <span class="badge badge-pill badge-primary">User</span> **Restricted access**, use for logic **on behalf of a single user/device/bot**…
 
 ---
@@ -91,9 +91,9 @@ const realmq = new RealMQ(authToken, options);
 
 ---
 
-## Realtime Gateway
+## Real-time Gateway
 
-Access our realtime api through `realmq.rmt.*`.
+Access our real-time API through `realmq.rmt.*`.
 Before you can send or receive messages, you need to establish a connection.
 
 ```js

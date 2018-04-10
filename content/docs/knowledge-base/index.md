@@ -19,7 +19,7 @@ menu:
 
 ## Custom Properties
 
-Our api resources [User](#user-resource) and [Channel](#channel-resource) have a `properties` field, that can be used
+Our API resources [User](#user-resource) and [Channel](#channel-resource) have a `properties` field, that can be used
 to store key value pairs to RealMQ objects.
 
 **Example Channel Properties:**
@@ -38,7 +38,7 @@ to store key value pairs to RealMQ objects.
 
 ## Paginated Lists
 
-All api resources have support for fetching paginated lists.
+All API resources have support for fetching paginated lists.
 You query slices by passing `offset` and `limit` parameters.
 Our generalized list response includes:
 
@@ -113,7 +113,7 @@ A subscription describes the access rights of user on channels.
 
 ## Auth Token Resource
 
-A token is issued for one user and grants scope specific Rest- & Realtime API access rights.
+A token is issued for one user and grants scope specific Rest- & Real-time API access rights.
 
 
 **Example Token:**
