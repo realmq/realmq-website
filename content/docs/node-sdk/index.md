@@ -96,8 +96,8 @@ const realmq = new RealMQ(authToken, options);
 | {{< p "authToken" "String" >}} | A secret RealMQ auth token. |
 | {{< p "options" "Object" true >}} | |
 | {{< p "options.host" "String" true >}} | Set this if you run against a dedicated or on-premise deployment.<br>**Default**: realmq.com |
-| {{< p "options.autoConnect" "Boolean" true >}} | Calls `realmq.rtm.connect()` right away.<br>**Default**: false |
-| {{< p "options.autoSubscribe" "Boolean" true >}} | Calls `realmq.autoSubscribe()` right away.<br>👉 **Note**: This implies `autoConnect = true`.<br>**Default**: false |
+| {{< p "options.autoConnect" "Boolean" true >}} | Automatically connect the client to the RealMQ broker upon initialization by implicitly calling `realmq.rtm.connect()`.<br>**Default**: false |
+| {{< p "options.autoSubscribe" "Boolean" true >}} | Automatically subscribes the client to all channels that the connecting user has access to by calling `realmq.autoSubscribe()` after connecting to the RealMQ broker. <br>👉 **Note**: This implies `autoConnect = true`.<br>**Default**: false |
 {{% /themify %}}
 
 ---
