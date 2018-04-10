@@ -1,11 +1,16 @@
 .docs-param-table {
   tr {
     th:first-child {
+      font-weight: 600;
       white-space: nowrap;
     }
   }
 
   td:first-child {
     width: 10%;
+  }
+
+  .param {
+    white-space: nowrap;
   }
 }
