@@ -12,7 +12,7 @@ menu:
 
 ## Getting Started
 
-1. Install the sdk:
+1. Install the SDK:
     - The easy way:
         ```html
         <script src="https://unpkg.com/@realmq/web-sdk"></script>
@@ -25,7 +25,7 @@ menu:
         $ npm install @realmq/web-sdk
         ```
 
-2. Initialize the sdk:
+2. Initialize the SDK:
 
     ```js
     const realmq = new RealMQ('your-auth-token');
@@ -47,7 +47,7 @@ menu:
 
 ## Concepts
 
-* Our sdk utilizes promises where ever possible.
+* Our SDK utilizes promises where ever possible.
 * Convenient interfaces `retrieve`, `list`, `create`, `update` and `remove` methods.
 * `realmq.rtm.*` provides [realtime functionality](#realtime-gateway)
 * Each api resource has its own namespace.
@@ -63,7 +63,7 @@ menu:
 
 ## Initialization
 
-Add the sdk to your html app:
+Add the SDK to your html app:
 
 ```html
 <script src="https://unpkg.com/@realmq/web-sdk"></script>
@@ -151,7 +151,7 @@ await realmq.rtm.unsubscribe({
 
 ### Receive messages
 
-Whenever a message hits the client, the sdk will emit message events.
+Whenever a message hits the client, the SDK will emit message events.
 
 * `message` will be emitted for every message.
 * `{channel}/message` will be emitted for every message in a particular channel
