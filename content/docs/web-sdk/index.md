@@ -56,8 +56,8 @@ menu:
     - `realmq.tokens.*` - ([Token API](#tokens))
     - `realmq.users.*` - ([User API](#users))
 * There are two access groups (scopes). Every method has a description of what scopes are allowed to perform that action.
-    - <span class="badge badge-pill badge-dark">Admin</span> Full **management capabilities**, use for implementing your realtime **business logic**
-    - <span class="badge badge-pill badge-dark">User</span> **Restricted access**, use for logic **on behalf of a single user/device/bot**…
+    - <span class="badge badge-pill badge-primary">Admin</span> Full **management capabilities**, use for implementing your realtime **business logic**
+    - <span class="badge badge-pill badge-primary">User</span> **Restricted access**, use for logic **on behalf of a single user/device/bot**…
 
 ---
 
@@ -207,7 +207,7 @@ await realmq.rtm.publish({ channel: 'test-channel', message });
 
 ### Create a channel
 
-<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-primary">Admin</span>
 
 ```js
 const channel1 = await realmq.channels.create();
@@ -223,8 +223,8 @@ const channel2 = await realmq.channels.create({ id: 'awesome-channel' });
 
 ### Retrieve a channel
 
-<span class="badge badge-pill badge-dark">Admin</span>
-<span class="badge badge-pill badge-dark">User</span>
+<span class="badge badge-pill badge-primary">Admin</span>
+<span class="badge badge-pill badge-primary">User</span>
 
 ```js
 const channel = await realmq.channels.retrieve('channel-id');
@@ -238,8 +238,8 @@ const channel = await realmq.channels.retrieve('channel-id');
 
 ### List all accessible channels
 
-<span class="badge badge-pill badge-dark">Admin</span>
-<span class="badge badge-pill badge-dark">User</span>
+<span class="badge badge-pill badge-primary">Admin</span>
+<span class="badge badge-pill badge-primary">User</span>
 
 Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of [Channels](/docs/knowledge-base/#chat-resource).
 
@@ -257,7 +257,7 @@ const channelList2 = await realmq.channels.list({ limit: 5, offset: 5 });
 
 ### Update a channel
 
-<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-primary">Admin</span>
 
 ```js
 const channel = await realmq.channels.update('channel-id', [
@@ -278,7 +278,7 @@ const channel = await realmq.channels.update('channel-id', [
 
 ### Remove a channel
 
-<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-primary">Admin</span>
 
 ```js
 const channel = await realmq.channels.remove('channel-id');
@@ -296,7 +296,7 @@ const channel = await realmq.channels.remove('channel-id');
 
 ### Create a subscription
 
-<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-primary">Admin</span>
 
 ```js
 const subscription = await realmq.subscriptions.create({
@@ -318,8 +318,8 @@ const subscription = await realmq.subscriptions.create({
 
 ### Retrieve a subscription
 
-<span class="badge badge-pill badge-dark">Admin</span>
-<span class="badge badge-pill badge-dark">User</span>
+<span class="badge badge-pill badge-primary">Admin</span>
+<span class="badge badge-pill badge-primary">User</span>
 
 ```js
 const subscription = await realmq.subscriptions.retrieve('subscription-id');
@@ -333,7 +333,7 @@ const subscription = await realmq.subscriptions.retrieve('subscription-id');
 
 ### List all subscriptions
 
-<span class="badge badge-pill badge-dark">User</span>
+<span class="badge badge-pill badge-primary">User</span>
 
 Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of [Subscriptions](/docs/knowledge-base/#subscription-resource).
 
@@ -351,7 +351,7 @@ const subscriptionList2 = await realmq.subscriptions.list({ limit: 5, offset: 5 
 
 ### Update a subscription
 
-<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-primary">Admin</span>
 
 ```js
 const user = await realmq.subscriptions.update('subscription-id', [
@@ -372,7 +372,7 @@ const user = await realmq.subscriptions.update('subscription-id', [
 
 ### Remove a subscription
 
-<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-primary">Admin</span>
 
 ```js
 const subscription = await realmq.subscriptions.remove('subscription-id');
@@ -390,7 +390,7 @@ const subscription = await realmq.subscriptions.remove('subscription-id');
 
 ### Create a token
 
-<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-primary">Admin</span>
 
 Create a new auth token and passively create a new user if not existing yet.
 If you want to create an auth token for an existing user you have to pass its id as userId.<br>
@@ -412,8 +412,8 @@ const user2 = await realmq.users.create({ id: 'my-token-id', userId: 'test-user'
 
 ### Retrieve a token
 
-<span class="badge badge-pill badge-dark">Admin</span>
-<span class="badge badge-pill badge-dark">User</span>
+<span class="badge badge-pill badge-primary">Admin</span>
+<span class="badge badge-pill badge-primary">User</span>
 
 Find an auth token by its id.
 
@@ -429,8 +429,8 @@ const user = await realmq.tokens.retrieve('token-id');
 
 ### List all tokens
 
-<span class="badge badge-pill badge-dark">Admin</span>
-<span class="badge badge-pill badge-dark">User</span>
+<span class="badge badge-pill badge-primary">Admin</span>
+<span class="badge badge-pill badge-primary">User</span>
 
 Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of [Tokens](/docs/knowledge-base/#auth-token-resource) of the current user,
 or realm-wide if the request is performed as admin.
@@ -449,8 +449,8 @@ const userList2 = await realmq.tokens.list({ limit: 5, offset: 5 });
 
 ### Update a token
 
-<span class="badge badge-pill badge-dark">Admin</span>
-<span class="badge badge-pill badge-dark">User</span>
+<span class="badge badge-pill badge-primary">Admin</span>
+<span class="badge badge-pill badge-primary">User</span>
 
 Update auth token via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)).
 
@@ -476,8 +476,8 @@ const user = await realmq.tokens.update('token-id', [
 
 ### Remove a token
 
-<span class="badge badge-pill badge-dark">Admin</span>
-<span class="badge badge-pill badge-dark">User</span>
+<span class="badge badge-pill badge-primary">Admin</span>
+<span class="badge badge-pill badge-primary">User</span>
 
 Delete the auth token and invalidates the session.
 
@@ -497,7 +497,7 @@ const user = await realmq.tokens.remove('token-id');
 
 ### Create a user
 
-<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-primary">Admin</span>
 
 ```js
 const user1 = await realmq.users.create();
@@ -513,7 +513,7 @@ const user2 = await realmq.users.create({ id: 'awesome-user' });
 
 ### Retrieve a user
 
-<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-primary">Admin</span>
 
 ```js
 const user = await realmq.users.retrieve('user-id');
@@ -527,7 +527,7 @@ const user = await realmq.users.retrieve('user-id');
 
 ### List all users
 
-<span class="badge badge-pill badge-dark">User</span>
+<span class="badge badge-pill badge-primary">User</span>
 
 Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of [Users](/docs/knowledge-base/#user-resource).
 
@@ -545,7 +545,7 @@ const userList2 = await realmq.users.list({ limit: 5, offset: 5 });
 
 ### Update a user
 
-<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-primary">Admin</span>
 
 ```js
 const user = await realmq.user.update('user-id', [
@@ -566,7 +566,7 @@ const user = await realmq.user.update('user-id', [
 
 ### Remove a user
 
-<span class="badge badge-pill badge-dark">Admin</span>
+<span class="badge badge-pill badge-primary">Admin</span>
 
 ```js
 var user = await realmq.users.remove('user-id');
