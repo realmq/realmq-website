@@ -1,6 +1,6 @@
 ---
 title: Node SDK
-subtitle: <i class="fa fa-github"></i> <a href="https://github.com/realmq/realmq-node-sdk">realmq/realmq-node-sdk</span>
+subtitle: <i class="fab fa-github"></i> <a href="https://github.com/realmq/realmq-node-sdk">realmq/realmq-node-sdk</span>
 menu:
   docs_home:
     name: Node SDK
