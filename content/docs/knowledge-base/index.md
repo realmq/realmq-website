@@ -38,15 +38,19 @@ to store key value pairs to RealMQ objects.
 
 ## Paginated Lists
 
-All API resources have support for fetching paginated lists.
-You query slices by passing `offset` and `limit` parameters.
-Our generalized list response includes:
+Paginated bulk-fetch functionality via "list" API methods is supported by all top-level API resources.<br>
+For example, you can list users (`GET /users`) or list channels (`GET /channels`), etc...<br>
+These list API methods share a common response structure and take at least these two parameters: `limit`, `offset`.<br>
 
-* `total` - amount of accessible items
-* `count` - the number of items in this response
-* `offset` - start position of the slice relative to all accessible items
-* `limit` - the considered slice limit (**min**: 0, **max**: 100, **default**: 20)
-* `items` - the list of fetched objects.
+{{% pt %}}
+| **Paginated List** | _<small>Our generalized list response</small>_ |
+|-----------:|-------------|
+| {{< p "total" "Int" >}} | The amount of accessible items |
+| {{< p "count" "Int" >}} | The number of items in this response |
+| {{< p "offset" "Int" >}} | Start position of the slice relative to all accessible items |
+| {{< p "limit" "Int" >}} | The considered slice limit<br>(**min**: 0, **max**: 100, **default**: 20) |
+| {{< p "items" "Array" >}} | The list of fetched objects |
+{{% /pt %}}
 
 **Example User List:**
 ```json
