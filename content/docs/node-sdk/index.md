@@ -132,10 +132,10 @@ function onConnect() {}
 realmq.rtm.on('connected', onConnect);
 ```
 
-You can remove event handlers with `realmq.rtm.un`:
+You can remove event handlers with `realmq.rtm.off`:
 
 ```js
-realmq.rtm.un('connected', onConnect);
+realmq.rtm.off('connected', onConnect);
 ```
 
 ### Subscribe to a channel
