@@ -129,7 +129,7 @@ realmq.rtm.un('connected', onConnect);
 
 ### Subscribe to a channel
 
-After subscribing to a channel you will receive all realtime messages published to that channel.
+After subscribing to a channel you will receive all messages published to that channel.
 
 ```js
 await realmq.rtm.subscribe({
@@ -141,7 +141,7 @@ await realmq.rtm.subscribe({
 
 ### Unsubscribe from a channel
 
-After unsubscribing from a channel you will not receive any realtime messages through that channel.
+After unsubscribing from a channel you will not receive any messages through that channel.
 
 ```js
 await realmq.rtm.unsubscribe({
