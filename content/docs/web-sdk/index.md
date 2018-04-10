@@ -113,7 +113,7 @@ await realmq.rtm.connect();
 * **{channel}/message**
 * **message-sent**
 
-Lets register an event handler with `realmq.rtm.on`:
+Let's register an event handler with `realmq.rtm.on`:
 
 ```js
 function onConnect() {}
