@@ -1,1 +1,1 @@
-<strong>{{- .Get 0 -}}</strong>{{- if isset .Params 1 }} - <em>{{- .Get 1 -}}</em>{{- end -}}{{- if isset .Params 2 -}}<br><em>(optional)</em>{{- end -}}
+<div class="text-truncate"><strong>{{- .Get 0 -}}</strong>{{- if isset .Params 1 }} - <em>{{- .Get 1 -}}</em>{{- end -}}{{- if isset .Params 2 -}}</div><em>(optional)</em>{{- end -}}
