@@ -82,7 +82,7 @@ A user may be a user, bot, sensor, server etc. and is able to participate in cha
 
 ## Channel Resource
 
-A channel is a message gateway and broadcasts a message, data, event etc. to all its users.
+Channels are used to broadcast messages. A user may be subscribed to multiple channels.
 
 **Example Channel:**
 ```json
@@ -102,7 +102,7 @@ A subscription describes the access rights of user on channels.
 ```json
 {
   "id": "test-subscription",
-  "channelId": "test-channeö",
+  "channelId": "test-channel",
   "userId": "test-user",
   "allowRead": true,
   "allowWrite": false,
