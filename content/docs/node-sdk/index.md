@@ -23,7 +23,7 @@ menu:
 2. Initialize the SDK:
 
     ```js
-    const realmq = require('@realmq/node-sdk')('your-auth-token');
+    const realmq = require('@realmq/node-sdk')('<AUTH_TOKEN>');
     ```
 
 3. Start implementing:
@@ -75,7 +75,7 @@ menu:
 
 SDK initialization is a one-liner:
 ```js
-const realmq = require('@realmq/node-sdk')('secret-auth-token');
+const realmq = require('@realmq/node-sdk')('<AUTH_TOKEN>');
 ```
 
 Or you use the verbose version:
@@ -83,7 +83,7 @@ Or you use the verbose version:
 ```js
 const RealMQ = require('@realmq/node-sdk');
 
-const authToken = 'secret-auth-token';
+const authToken = '<AUTH_TOKEN>';
 const options = {
   host: 'realmq.your-tld.com'
 };

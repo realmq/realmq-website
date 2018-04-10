@@ -28,7 +28,7 @@ menu:
 2. Initialize the SDK:
 
     ```js
-    const realmq = new RealMQ('your-auth-token');
+    const realmq = new RealMQ('<AUTH_TOKEN>');
     ```
 
 3. Start implementing:
@@ -72,7 +72,7 @@ Add the SDK to your html app:
 Now you can initialize your real-time client.
 
 ```js
-const authToken = 'secret-auth-token';
+const authToken = '<AUTH_TOKEN>';
 const options = {
   host: 'realmq.your-tld.com'
 };
