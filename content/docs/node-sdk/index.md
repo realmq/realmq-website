@@ -102,118 +102,6 @@ const realmq = new RealMQ(authToken, options);
 
 ---
 
-## Real-time Gateway
-
-Access our real-time API through `realmq.rmt.*`.
-Before you can send or receive messages, you need to establish a connection.
-
-```js
-await realmq.rtm.connect();
-```
-
-:point_right: **Info**: There is also a `realmq.rtm.disconnect()` method.
-
-### Events
-
-`realmq.rtm` emits the following events:
-
-* **connected**
-* **reconnected**
-* **disconnected**
-* **message**
-* **{channel}/message**
-* **message-sent**
-
-Let's register an event handler with `realmq.rtm.on`:
-
-```js
-function onConnect() {}
-
-realmq.rtm.on('connected', onConnect);
-```
-
-You can remove event handlers with `realmq.rtm.off`:
-
-```js
-realmq.rtm.off('connected', onConnect);
-```
-
-### Subscribe to a channel
-
-After subscribing to a channel you will receive all messages published to that channel.
-
-```js
-await realmq.rtm.subscribe({
-  channel: 'test-channel'
-});
-```
-
-:point_right: **Note**: Subscribe will fail if you do not have a read-enabled subscription on that channel.
-
-### Unsubscribe from a channel
-
-After unsubscribing from a channel you will not receive any messages through that channel.
-
-```js
-await realmq.rtm.unsubscribe({
-  channel: 'test-channel'
-});
-```
-
-### Receive messages
-
-Whenever a message hits the client, the SDK will emit message events.
-
-* `message` will be emitted for every message.
-* `{channel}/message` will be emitted for every message in a particular channel
-
-```js
-realmq.rtm.on('message', function messageHandler(message) {});
-realmq.rtm.on('some-channel/message', function channelMessageHandler(message) {});
-```
-
-The message object provides the following properties:
-
-{{% pt %}}
-| Message Properties |  |
-|-----------:|-------------|
-| {{< p "channel" "String" >}} | The channel in which the messag was published. |
-| {{< p "raw" "Buffer" >}} | The raw message buffer. |
-| {{< p "data" "Mixed" >}} | Contains the json decoded buffer data. |
-| {{< p "error" "Error" >}} | Only set if data was accessed and json decoding failed. |
-{{% /pt %}}
-
-:point_right: **Note**: If your messages contain binary, you should access `raw` instead of data. Otherwise a JSON Parse exception might be raised.
-
-### Publish a message
-
-We do not restrict you on what data of which format you publish.
-
-You can send plain string messages:
-
-```js
-await realmq.rtm.publish({ channel: 'test-channel', message: 'Welcome!' });
-```
-
-Or if you prefer Buffers:
-
-```js
-const message = new Buffer('Welcome!');
-await realmq.rtm.publish({ channel: 'test-channel', message });
-```
-
-Or anything else:
-
-```js
-const message = { ':heart:': 'Welcome!' };
-await realmq.rtm.publish({ channel: 'test-channel', message });
-```
-
-:point_right: **Note**: Non Buffer messages will be automatically JSON encoded.<br>
-:point_right: **Note**: Publish will fail if you do not have a write-enabled subscription on that channel.
-
----
-
 ## Channels
 
 ### Create a channel
@@ -589,3 +477,115 @@ const user = await realmq.users.remove('user-id');
 |-----------:|-------------|
 | {{< p "userId" "String" >}} | |
 {{% /pt %}}
+
+---
+
+## Real-time Gateway
+
+Access our real-time API through `realmq.rmt.*`.
+Before you can send or receive messages, you need to establish a connection.
+
+```js
+await realmq.rtm.connect();
+```
+
+:point_right: **Info**: There is also a `realmq.rtm.disconnect()` method.
+
+### Events
+
+`realmq.rtm` emits the following events:
+
+* **connected**
+* **reconnected**
+* **disconnected**
+* **message**
+* **{channel}/message**
+* **message-sent**
+
+Let's register an event handler with `realmq.rtm.on`:
+
+```js
+function onConnect() {}
+
+realmq.rtm.on('connected', onConnect);
+```
+
+You can remove event handlers with `realmq.rtm.off`:
+
+```js
+realmq.rtm.off('connected', onConnect);
+```
+
+### Subscribe to a channel
+
+After subscribing to a channel you will receive all messages published to that channel.
+
+```js
+await realmq.rtm.subscribe({
+  channel: 'test-channel'
+});
+```
+
+:point_right: **Note**: Subscribe will fail if you do not have a read-enabled subscription on that channel.
+
+### Unsubscribe from a channel
+
+After unsubscribing from a channel you will not receive any messages through that channel.
+
+```js
+await realmq.rtm.unsubscribe({
+  channel: 'test-channel'
+});
+```
+
+### Receive messages
+
+Whenever a message hits the client, the SDK will emit message events.
+
+* `message` will be emitted for every message.
+* `{channel}/message` will be emitted for every message in a particular channel
+
+```js
+realmq.rtm.on('message', function messageHandler(message) {});
+realmq.rtm.on('some-channel/message', function channelMessageHandler(message) {});
+```
+
+The message object provides the following properties:
+
+{{% pt %}}
+| Message Properties |  |
+|-----------:|-------------|
+| {{< p "channel" "String" >}} | The channel in which the messag was published. |
+| {{< p "raw" "Buffer" >}} | The raw message buffer. |
+| {{< p "data" "Mixed" >}} | Contains the json decoded buffer data. |
+| {{< p "error" "Error" >}} | Only set if data was accessed and json decoding failed. |
+{{% /pt %}}
+
+:point_right: **Note**: If your messages contain binary, you should access `raw` instead of data. Otherwise a JSON Parse exception might be raised.
+
+### Publish a message
+
+We do not restrict you on what data of which format you publish.
+
+You can send plain string messages:
+
+```js
+await realmq.rtm.publish({ channel: 'test-channel', message: 'Welcome!' });
+```
+
+Or if you prefer Buffers:
+
+```js
+const message = new Buffer('Welcome!');
+await realmq.rtm.publish({ channel: 'test-channel', message });
+```
+
+Or anything else:
+
+```js
+const message = { ':heart:': 'Welcome!' };
+await realmq.rtm.publish({ channel: 'test-channel', message });
+```
+
+:point_right: **Note**: Non Buffer messages will be automatically JSON encoded.<br>
+:point_right: **Note**: Publish will fail if you do not have a write-enabled subscription on that channel.
