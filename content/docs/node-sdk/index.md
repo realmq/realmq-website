@@ -90,7 +90,7 @@ const options = {
 const realmq = new RealMQ(authToken, options);
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "authToken" "String" >}} | A secret RealMQ auth token. |
@@ -98,7 +98,7 @@ const realmq = new RealMQ(authToken, options);
 | {{< p "options.host" "String" true >}} | Set this if you run against a dedicated or on-premise deployment.<br>**Default**: realmq.com |
 | {{< p "options.autoConnect" "Boolean" true >}} | Automatically connect the client to the RealMQ broker upon initialization by implicitly calling `realmq.rtm.connect()`.<br>**Default**: false |
 | {{< p "options.autoSubscribe" "Boolean" true >}} | Automatically subscribes the client to all channels that the connecting user has access to by calling `realmq.autoSubscribe()` after connecting to the RealMQ broker. <br>👉 **Note**: This implies `autoConnect = true`.<br>**Default**: false |
-{{% /themify %}}
+{{% /pt %}}
 
 ---
 
@@ -174,14 +174,14 @@ realmq.rtm.on('some-channel/message', function channelMessageHandler(message) {}
 
 The message object provides the following properties:
 
-{{% themify %}}
+{{% pt %}}
 | Message Properties |  |
 |-----------:|-------------|
 | {{< p "channel" "String" >}} | The channel in which the messag was published. |
 | {{< p "raw" "Buffer" >}} | The raw message buffer. |
 | {{< p "data" "Mixed" >}} | Contains the json decoded buffer data. |
 | {{< p "error" "Error" >}} | Only set if data was accessed and json decoding failed. |
-{{% /themify %}}
+{{% /pt %}}
 
 :point_right: **Note**: If your messages contain binary, you should access `raw` instead of data. Otherwise a JSON Parse exception might be raised.
 
@@ -225,12 +225,12 @@ const channel1 = await realmq.channels.create();
 const channel2 = await realmq.channels.create({ id: 'awesome-channel' });
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "id" "String" true >}} | see [Custom Ids](/docs/knowledge-base/#custom-ids) |
 | {{< p "properties" "Object" true >}} | see [Custom Properties](/docs/knowledge-base/#custom-properties) |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Retrieve a channel
 
@@ -241,11 +241,11 @@ const channel2 = await realmq.channels.create({ id: 'awesome-channel' });
 const channel = await realmq.channels.retrieve('channel-id');
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "channelId" "String" >}} | |
-{{% /themify %}}
+{{% /pt %}}
 
 ### List all accessible channels
 
@@ -259,12 +259,12 @@ const channelList1 = await realmq.channels.list();
 const channelList2 = await realmq.channels.list({ limit: 5, offset: 5 });
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "offset" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
 | {{< p "limit" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Update a channel
 
@@ -280,12 +280,12 @@ const channel = await realmq.channels.update('channel-id', [
 ]);
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "channelId" "String" >}} | |
 | {{< p "patch" "Array" >}} | Update channel properties via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Remove a channel
 
@@ -295,11 +295,11 @@ const channel = await realmq.channels.update('channel-id', [
 const channel = await realmq.channels.remove('channel-id');
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "channelId" "String" >}} | |
-{{% /themify %}}
+{{% /pt %}}
 
 ---
 
@@ -317,7 +317,7 @@ const subscription = await realmq.subscriptions.create({
 });
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "id" "String" true >}} | An optional [Custom Id](/docs/knowledge-base/#custom-ids) |
@@ -325,7 +325,7 @@ const subscription = await realmq.subscriptions.create({
 | {{< p "userId" "String" true >}} | An optional [User](/docs/knowledge-base/#user-resource) reference.<br> 👉 **Note**: User will be auto-created. |
 | {{< p "allowRead" "Boolean" true >}} | Whether the user will be able to receive channel messages. |
 | {{< p "allowWrite" "Boolean" true >}} | Whether the user will be able to publish messages to the channel. |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Retrieve a subscription
 
@@ -336,11 +336,11 @@ const subscription = await realmq.subscriptions.create({
 const subscription = await realmq.subscriptions.retrieve('subscription-id');
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "subscriptionId" "String" >}} | |
-{{% /themify %}}
+{{% /pt %}}
 
 ### List all subscriptions
 
@@ -353,12 +353,12 @@ const subscriptionList1 = await realmq.subscriptions.list();
 const subscriptionList2 = await realmq.subscriptions.list({ limit: 5, offset: 5 });
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "offset" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
 | {{< p "limit" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Update a subscription
 
@@ -374,12 +374,12 @@ const user = await realmq.subscriptions.update('subscription-id', [
 ]);
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "subscriptionId" "String" >}} | |
 | {{< p "patch" "Array" >}} | Update user properties via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Remove a subscription
 
@@ -389,11 +389,11 @@ const user = await realmq.subscriptions.update('subscription-id', [
 const subscription = await realmq.subscriptions.remove('subscription-id');
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "subscriptionId" "String" >}} | |
-{{% /themify %}}
+{{% /pt %}}
 
 ---
 
@@ -412,14 +412,14 @@ const user1 = await realmq.tokens.create();
 const user2 = await realmq.users.create({ id: 'my-token-id', userId: 'test-user', scope: 'user' });
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "id" "String" true >}} | An optional [Custom Ids](/docs/knowledge-base/#custom-ids) |
 | {{< p "userId" "String" true >}} |  An optional [User](/docs/knowledge-base/#user-resource) reference.<br> 👉 **Note**: User will be auto-created. |
 | {{< p "scope" "String" true >}} | Scope of the token. Possible values are `admin` and `user`.<br>**Default**: user |
 | {{< p "description" "String" true >}} | An optional auth token description. |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Retrieve a token
 
@@ -432,11 +432,11 @@ Find an auth token by its id.
 const user = await realmq.tokens.retrieve('token-id');
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "tokenId" "String" >}} | |
-{{% /themify %}}
+{{% /pt %}}
 
 ### List all tokens
 
@@ -451,12 +451,12 @@ const userList1 = await realmq.tokens.list();
 const userList2 = await realmq.tokens.list({ limit: 5, offset: 5 });
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "offset" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
 | {{< p "limit" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Update a token
 
@@ -479,12 +479,12 @@ const user = await realmq.tokens.update('token-id', [
 ]);
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "tokenId" "String" >}} | |
 | {{< p "patch" "Array" >}} | Update token description via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Remove a token
 
@@ -497,11 +497,11 @@ Delete the auth token and invalidates the session.
 const user = await realmq.tokens.remove('token-id');
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "tokenId" "String" >}} | |
-{{% /themify %}}
+{{% /pt %}}
 
 ---
 
@@ -516,12 +516,12 @@ const user1 = await realmq.users.create();
 const user2 = await realmq.users.create({ id: 'awesome-user' });
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "id" "String" true >}} | An optional [Custom Ids](/docs/knowledge-base/#custom-ids) |
 | {{< p "properties" "Object" true >}} | A map of [Custom Properties](/docs/knowledge-base/#custom-properties) |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Retrieve a user
 
@@ -531,11 +531,11 @@ const user2 = await realmq.users.create({ id: 'awesome-user' });
 const user = await realmq.users.retrieve('user-id');
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "userId" "String" >}} | |
-{{% /themify %}}
+{{% /pt %}}
 
 ### List all users
 
@@ -548,12 +548,12 @@ const userList1 = await realmq.users.list();
 const userList2 = await realmq.users.list({ limit: 5, offset: 5 });
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "offset" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
 | {{< p "limit" "Int" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Update a user
 
@@ -569,12 +569,12 @@ const user = await realmq.user.update('user-id', [
 ]);
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "userId" "String" >}} | |
 | {{< p "patch" "Array" >}} | - Update user properties via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
-{{% /themify %}}
+{{% /pt %}}
 
 ### Remove a user
 
@@ -584,8 +584,8 @@ const user = await realmq.user.update('user-id', [
 const user = await realmq.users.remove('user-id');
 ```
 
-{{% themify %}}
+{{% pt %}}
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "userId" "String" >}} | |
-{{% /themify %}}
+{{% /pt %}}
