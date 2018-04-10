@@ -1,0 +1,6 @@
+User-agent: *
+{{ $CONTEXT := getenv "CONTEXT" -}}
+{{- $URL := getenv "URL" -}}
+{{- if or (ne $CONTEXT "production") (ne $URL "https://realmq.com") -}}
+Disallow: /
+{{- end -}}

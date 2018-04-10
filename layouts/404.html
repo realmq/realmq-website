@@ -10,6 +10,8 @@
 
   <link href="/{{ index .Site.Data.assets "css/theme.css" }}" rel="stylesheet">
   <link rel="icon" href="/{{ index .Site.Data.assets "img/favicon.png" }}">
+
+  {{ partial "matomo" . }}
 </head>
 
 <body class="layout-centered bg-gray">

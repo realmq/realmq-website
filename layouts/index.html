@@ -3,13 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta name="description" content="RealMQ is a highly scalable, privacy compliant real-time communication backbone. Our focus is to deliver great service with best possible integrability while you keep full control over your data.">
+  <meta name="keywords" content="realtime, real-time, messaging, on-premise, mqtt, chat, broker, iot, internet of things">
 
-  <title>RealMQ — Realtime Messaging on Premise</title>
+  <title>RealMQ — Real-time messaging on-premise</title>
 
   <link href="/{{ index .Site.Data.assets "css/theme.css" }}" rel="stylesheet">
-  <link rel="icon" href="/{{ index .Site.Data.assets "img/favicon.png" }}">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/{{ index .Site.Data.assets "img/favicons/apple-touch-icon.png" }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="/{{ index .Site.Data.assets "img/favicons/favicon-32x32.png" }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="/{{ index .Site.Data.assets "img/favicons/favicon-16x16.png" }}">
+
+  {{ partial "matomo" . }}
 </head>
 <body class="navbar-scrolled">
 
@@ -38,16 +43,16 @@
 </nav><!-- /.navbar -->
 
 <!-- Header -->
-<header id="home" class="header h-fullscreen birdies">
+<header id="home" class="header h-fullscreen">
   <div class="container">
     <div class="row align-items-center h-100">
       <div class="col-md">
         <h1 class="display-4">
           <img class="logo" src="/{{ index .Site.Data.assets "img/logo.svg" }}" alt="RealMQ"><br>
-          Realtime messaging on premise
+          Real-time messaging on-premise
         </h1>
         <p class="lead mt-5">
-          RealMQ is a highly scalable, privacy-compliant realtime communication backbone.
+          RealMQ is a highly scalable, privacy compliant real-time communication backbone.
           Our focus is to deliver great service with best possible integrability
           while you keep full control over your data.
         </p>
@@ -69,11 +74,11 @@
   <section id="section-features" class="section">
     <div class="container">
       <header class="section-header">
-        <h2 class="text-primary">What we can do for you</h2>
+        <h2 class="text-primary">What we offer</h2>
         <hr>
         <p class="lead">
-          RealMQ is your building block to add modern and reliable realtime messaging to your applications.
-          We offer full GDRP compliance and even better - we come on premise (if you want).
+          RealMQ is your building block to add modern and reliable real-time messaging to your applications.
+          We offer full GDPR compliance and even better - we come on-premise if you want.
           Running RealMQ on your own infrastructure, you have complete control on what data is stored,
           and where. Additionally our licensing model includes full source code access. Our main goal is
           to enable messaging in your application &ndash; your business, your rules.
@@ -122,7 +127,7 @@
           <p class="feature-icon text-dark"><i class="icon-download"></i></p>
           <h5>Dedicated / On premise</h5>
           <p>
-            RealMQ can run as fully managed dedicated service or on premise on your infrastructure.
+            RealMQ can run as fully managed dedicated service or on-premise on your infrastructure.
           </p>
         </div>
 
@@ -145,12 +150,12 @@
 
       <div class="row">
         <div class="col-md-6">
-          <p class="feature-icon-large text-center text-primary-light"><i class="fa fa-comments-o"></i></p>
+          <p class="feature-icon-large text-center text-primary-light"><i class="fas fa-comments"></i></p>
         </div>
         <div class="col-md-6 text-justify">
           <h4>Chat</h4>
           <p>
-            If asked for a use case for realtime messaging most people will answer: chat! Traditional
+            If asked for a use case for real-time messaging most people will answer: chat! Traditional
             chat systems are a natural fit for RealMQ. It just needs a thin business layer on top of
             RealMQ and some smart client side semantics. Luckily we provide some expressive recipes
             and reference implementations.
@@ -212,7 +217,7 @@
         </div>
 
         <div class="col-md-6">
-          <p class="feature-icon-large text-center text-primary-light"><i class="fa fa-users"></i></p>
+          <p class="feature-icon-large text-center text-primary-light"><i class="fas fa-users"></i></p>
         </div>
       </div>
 
@@ -220,14 +225,14 @@
 
       <div class="row gap-y align-items-center">
         <div class="col-md-6">
-          <p class="feature-icon-large text-center text-primary-light"><i class="fa fa-bolt"></i></p>
+          <p class="feature-icon-large text-center text-primary-light"><i class="fas fa-bolt"></i></p>
         </div>
         <div class="col-md-6 text-justify">
-          <h4>Realtime Events</h4>
+          <h4>real-time Events</h4>
           <p>
             Today people are used to real time updates and immediate notifications on important
             events. They expect instant feedback on all their devices like mobile phone, laptop, or
-            tablet when interacting with the digital world. Realtime events are the key.
+            tablet when interacting with the digital world. Real-time events are the key.
           </p>
 
           <dl>
@@ -237,14 +242,14 @@
               ordered item.
             </dd>
 
-            <dt>Realtime Databases</dt>
+            <dt>Real-time Databases</dt>
             <dd>
               Synchronize data accross multiple distributed devices.
             </dd>
 
             <dt>eCommerce</dt>
             <dd>
-              Show visitors on your shop website realtime updates on prices, special offers, or other
+              Show visitors on your shop website real-time updates on prices, special offers, or other
               relevant information to turn them into happy customers.
             </dd>
           </dl>
@@ -281,7 +286,7 @@
         </div>
 
         <div class="col-md-6">
-          <p class="feature-icon-large text-center text-primary-light"><i class="fa fa-lightbulb-o"></i></p>
+          <p class="feature-icon-large text-center text-primary-light"><i class="fas fa-wifi"></i></p>
         </div>
       </div>
 
@@ -296,7 +301,7 @@
   <section id="section-pricing" class="section">
     <div class="container">
       <header class="section-header">
-        <h2 class="text-primary">Transparent Pricing</h2>
+        <h2 class="text-primary">Pricing</h2>
       </header>
 
       <div class="row gap-y text-center">
@@ -326,7 +331,7 @@
               <span>500</span>
             </h2>
             <p class="small text-lighter">
-              As a Service
+              billed monthly
             </p>
 
             <div class="text-muted">
@@ -349,7 +354,7 @@
               <span>3k</span>
             </h2>
             <p class="small text-lighter">
-              À la carte
+              billed monthly
             </p>
 
             <div class="text-muted">
@@ -398,9 +403,9 @@
           <hr class="d-lg-none">
           <h5>RealMQ GmbH</h5>
           <address>
-            <i class="fa fa-globe"></i> Residenzstraße 46, 13409 Berlin, Germany<br>
-            <i class="fa fa-phone"></i> +49 (176) 7866 4791<br>
-            <i class="fa fa-envelope"></i> <a href="mailto:service@realmq.com">service@realmq.com</a>
+            <i class="fas fa-globe"></i> Residenzstraße 46, 13409 Berlin, Germany<br>
+            <i class="fas fa-phone"></i> +49 (176) 7866 4791<br>
+            <i class="fas fa-envelope"></i> <a href="mailto:service@realmq.com">service@realmq.com</a>
           </address>
         </div>
       </form>
