@@ -85,7 +85,7 @@ const RealMQ = require('@realmq/node-sdk');
 
 const authToken = '<AUTH_TOKEN>';
 const options = {
-  host: 'realmq.your-tld.com'
+  host: 'realmq.your-domain.com'
 };
 const realmq = new RealMQ(authToken, options);
 ```
