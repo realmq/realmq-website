@@ -1,1 +1,1 @@
-<div class="param"><code>{{- .Get 0 -}}</code>{{- if isset .Params 1 }} - <em>{{- .Get 1 -}}</em>{{- end -}}{{- if isset .Params 2 -}}</div><em>(optional)</em>{{- end -}}
+<div class="param">{{- if isset .Params 1 }}<span class="type">{{- .Get 1 -}}</span> {{ end -}}<code>{{- .Get 0 -}}</code>{{- if isset .Params 2 -}}</div><em>(optional)</em>{{- end -}}
