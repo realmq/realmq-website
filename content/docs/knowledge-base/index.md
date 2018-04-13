@@ -61,10 +61,10 @@ These list API methods share a common response structure and take at least these
   "limit": 20,
   "items": [{
     "id": "test-user",
-    "createdAt": "{{< isodate >}}",
-    "updatedAt": "{{< isodate >}}",
     "properties": {},
-    "isOnline": true
+    "isOnline": true,
+    "createdAt": "{{< isodate >}}",
+    "updatedAt": "{{< isodate >}}"
   }]
 }
 ```
@@ -77,10 +77,10 @@ A user may be a user, bot, sensor, server etc. and is able to participate in cha
 ```json
 {
   "id": "test-user",
-  "createdAt": "{{< isodate >}}",
-  "updatedAt": "{{< isodate >}}",
   "properties": {},
-  "isOnline": true
+  "isOnline": true,
+  "createdAt": "{{< isodate >}}",
+  "updatedAt": "{{< isodate >}}"
 }
 ```
 
@@ -92,9 +92,9 @@ Channels are used to broadcast messages. A user may be subscribed to multiple ch
 ```json
 {
   "id": "test-channel",
+  "properties": {},
   "createdAt": "{{< isodate >}}",
-  "updatedAt": "{{< isodate >}}",
-  "properties": {}
+  "updatedAt": "{{< isodate >}}"
 }
 ```
 
@@ -124,12 +124,12 @@ A token is issued for one user and grants scope specific Rest- & Real-time API a
 ```json
 {
   "id": "test-token",
-  "createdAt": "{{< isodate >}}",
-  "updatedAt": "{{< isodate >}}",
   "scope": "user",
   "userId": "test-user",
   "token": "PBCTpLPZkJkpMnA/kV2dgLfNDjgIAcF=",
   "isOnline": true,
-  "description": "Some optional desc."
+  "description": "Some optional desc.",
+  "createdAt": "{{< isodate >}}",
+  "updatedAt": "{{< isodate >}}"
 }
 ```
