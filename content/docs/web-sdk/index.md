@@ -15,7 +15,7 @@ menu:
 1. Install the SDK:
     - The easy way:
         ```html
-        <script src="https://unpkg.com/@realmq/web-sdk"></script>
+        <script src="https://unpkg.com/@realmq/web-sdk/dist/realmq.min.js"></script>
         ```
 
     - The flexible way:
