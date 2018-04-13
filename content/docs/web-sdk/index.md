@@ -1,6 +1,6 @@
 ---
 title: "Web SDK"
-subtitle: <i class="fab fa-github"></i> <a href="https://github.com/realmq/realmq-web-sdk">realmq/realmq-web-sdk</span>
+subtitle: <i class="fab fa-github"></i> <a href="https://github.com/realmq/realmq-web-sdk">realmq/realmq-web-sdk</a>
 menu:
   docs_home:
     name: Web SDK
