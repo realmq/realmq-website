@@ -1,0 +1,23 @@
+.docs-param-table {
+  tr {
+    th:first-child {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  }
+
+  td:first-child {
+    width: 10%;
+  }
+
+  .param {
+    white-space: nowrap;
+  }
+}
+
+.rmq-docs-sidebar {
+  position: sticky;
+  top: 3rem;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+}

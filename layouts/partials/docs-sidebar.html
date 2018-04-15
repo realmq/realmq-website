@@ -1,0 +1,20 @@
+<aside class="rmq-docs-sidebar">
+  <nav class="nav flex-column">
+    {{- $currentPage := . -}}
+    {{ range .Site.Menus.docs }}
+      {{ if .HasChildren }}
+        <h6 class="sidebar-title mb-1">{{ .Name }}</h6>
+        <nav class="sub-nav mb-4">
+          {{ range .Children }}
+            <a href="{{ .URL }}" class='nav-link {{if $currentPage.IsMenuCurrent "docs" .}}active{{end}}'>{{ .Name }}</a>
+            {{ if $currentPage.IsMenuCurrent "docs" . }}
+              {{ partial "table-of-contents" $currentPage }}
+            {{ end }}
+          {{ end }}
+        </nav>
+      {{else}}
+        <a href="{{ .URL }}" class='nav-link {{if $currentPage.IsMenuCurrent "docs" .}}active{{end}}'>{{ .Name }}</a>
+      {{end}}
+    {{end}}
+  </nav>
+</aside>
