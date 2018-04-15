@@ -57,15 +57,15 @@ menu:
 
 ## Concepts
 
-* Our SDK utilizes promises where ever possible.
-* Convenient interfaces `retrieve`, `list`, `create`, `update` and `remove` methods.
+* Our SDK utilizes promises where possible.
+* We provide convenient interfaces to work with resources `retrieve`, `list`, `create`, `update` and `remove` methods.
 * `realmq.rtm.*` provides [real-time functionality](#real-time-gateway)
 * Each API resource has its own namespace.
     - `realmq.channels.*` - ([Channel API](#channels))
     - `realmq.subscriptions.*` - ([Subscription API](#subscriptions))
     - `realmq.tokens.*` - ([Token API](#tokens))
     - `realmq.users.*` - ([User API](#users))
-* There are two access groups (scopes). Every method has a description of what scopes are allowed to perform that action.
+* There are two access groups (scopes). Every method has a description of which scopes are allowed to perform what action.
     - <span class="badge badge-pill badge-primary">Admin</span> Full **management capabilities**, use for implementing your real-time **business logic**
     - <span class="badge badge-pill badge-primary">User</span> **Restricted access**, use for logic **on behalf of a single user/device/bot**…
 
@@ -209,8 +209,8 @@ const subscription = await realmq.subscriptions.create({
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "id" "String" true >}} | An optional [Custom Id](/docs/knowledge-base/#custom-ids) |
-| {{< p "channelId" "String" true >}} | An optional [Channel](/docs/knowledge-base/#channel-resource) reference.<br> 👉 **Note**: Channel will be auto-created. |
-| {{< p "userId" "String" true >}} | An optional [User](/docs/knowledge-base/#user-resource) reference.<br> 👉 **Note**: User will be auto-created. |
+| {{< p "channelId" "String" true >}} | An optional [Channel](/docs/knowledge-base/#channel-resource) reference.<br> 👉 **Note**: If no channel is specified or the specified channel doesn't exist it will be auto-created. |
+| {{< p "userId" "String" true >}} | An optional [User](/docs/knowledge-base/#user-resource) reference.<br> 👉 **Note**: If no user is specified or the specified user doesn't exist it will be auto-created. |
 | {{< p "allowRead" "Boolean" true >}} | Whether the user will be able to receive channel messages. |
 | {{< p "allowWrite" "Boolean" true >}} | Whether the user will be able to publish messages to the channel. |
 {{% /pt %}}
@@ -292,8 +292,7 @@ const subscription = await realmq.subscriptions.remove('subscription-id');
 <span class="badge badge-pill badge-primary">Admin</span>
 
 Create a new auth token and passively create a new user if not existing yet.
-If you want to create an auth token for an existing user you have to pass its id as userId.<br>
-:point_right: **Note**: For unknown userId's or without providing a userId, a user is created and referenced on the fly.
+If you want to create an auth token for an existing user you have to pass its id as userId.
 
 ```js
 const user1 = await realmq.tokens.create();
@@ -304,7 +303,7 @@ const user2 = await realmq.users.create({ id: 'my-token-id', userId: 'test-user'
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "id" "String" true >}} | An optional [Custom Ids](/docs/knowledge-base/#custom-ids) |
-| {{< p "userId" "String" true >}} |  An optional [User](/docs/knowledge-base/#user-resource) reference.<br> 👉 **Note**: User will be auto-created. |
+| {{< p "userId" "String" true >}} |  An optional [User](/docs/knowledge-base/#user-resource) reference.<br> 👉 **Note**: If no user is specified or the specified user doesn't exist it will be auto-created. |
 | {{< p "scope" "String" true >}} | Scope of the token. Possible values are `admin` and `user`.<br>**Default**: user |
 | {{< p "description" "String" true >}} | An optional auth token description. |
 {{% /pt %}}
@@ -332,7 +331,7 @@ const user = await realmq.tokens.retrieve('token-id');
 <span class="badge badge-pill badge-primary">User</span>
 
 Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of [Tokens](/docs/knowledge-base/#auth-token-resource) of the current user,
-or realm-wide if the request is performed as admin.
+or system-wide if the request is performed as admin.
 
 ```js
 const userList1 = await realmq.tokens.list();
@@ -379,7 +378,7 @@ const user = await realmq.tokens.update('token-id', [
 <span class="badge badge-pill badge-primary">Admin</span>
 <span class="badge badge-pill badge-primary">User</span>
 
-Delete the auth token and invalidates the session.
+Delete the auth token and invalidate the session.
 
 ```js
 const user = await realmq.tokens.remove('token-id');
@@ -461,7 +460,7 @@ const user = await realmq.user.update('user-id', [
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "userId" "String" >}} | |
-| {{< p "patch" "Array" >}} | - Update user properties via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
+| {{< p "patch" "Array" >}} | Update user properties via JSON-patch ([RFC6902](http://tools.ietf.org/html/rfc6902)). |
 {{% /pt %}}
 
 ### Remove a user
