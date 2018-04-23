@@ -97,8 +97,8 @@ const realmq = new RealMQ(authToken, options);
 | {{< p "options" "Object" true >}} | |
 | {{< p "options.host" "String" true >}} | Set this if you run against a dedicated or on-premise deployment.<br>**Default**: realmq.com |
 | {{< p "options.autoConnect" "Boolean" true >}} | Automatically connect the client to the RealMQ broker upon initialization by implicitly calling `realmq.rtm.connect()`.<br>**Default**: false |
-| {{< p "options.autoSubscribe" "Boolean" true >}} | Automatically subscribes the client to all channels that the connecting user has access to by calling `realmq.autoSubscribe()` after connecting to the RealMQ broker. <br>👉 **Note**: This implies `autoConnect = true`.<br>**Default**: false |
-| {{< p "options.enableSubscriptionSyncEvents" "Boolean" true >}} | Sync subscriptions and emit `subscription-created`, `subscription-updated` & `subscription-deleted` events<br>**Default**: true |
+| {{< p "options.enableSubscriptionSyncEvents" "Boolean" true >}} | Emit subscription synchronization events `subscription-created`, `subscription-updated` & `subscription-deleted` events<br>**Default**: true |
+| {{< p "options.autoSubscribe" "Boolean" true >}} | Automatically subscribes the client to all channels that the connecting user has access to by calling `realmq.autoSubscribe()` after connecting to the RealMQ broker. If `enableSubscriptionSyncEvents` is enabled the client automatically updates the subscriptions during runtime.<br>👉 **Note**: This implies `autoConnect = true`.<br>**Default**: false |
 {{% /pt %}}
 
 ---
