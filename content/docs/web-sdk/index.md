@@ -103,8 +103,22 @@ const realmq = new RealMQ(authToken, options);
 <span class="badge badge-pill badge-primary">Admin</span>
 
 ```js
+// create a simple channel
 const channel1 = await realmq.channels.create();
+
+// create a channel with a custom id
 const channel2 = await realmq.channels.create({ id: 'awesome-channel' });
+
+// create a channel with a message storage limit of 7 days
+const channel3 = await realmq.channels.create({
+  id: 'messages-within-the-last-week',
+  features: {
+    persistence: {
+      enabled: true,
+      duration: "7d",
+    },
+  },
+});
 ```
 
 {{% pt %}}
@@ -112,6 +126,10 @@ const channel2 = await realmq.channels.create({ id: 'awesome-channel' });
 |-----------:|-------------|
 | {{< p "id" "String" true >}} | see [Custom Ids](/docs/knowledge-base/#custom-ids) |
 | {{< p "properties" "Object" true >}} | see [Custom Properties](/docs/knowledge-base/#custom-properties) |
+| {{< p "features" "Object" true >}} | Additional channel features |
+| {{< p "features.persistence" "Object" true >}} | Message persistence settings for this channel |
+| {{< p "features.persistence.enabled" "Boolean" >}} | If set to true, the messages published in this channel are persisted for later access. |
+| {{< p "features.persistence.duration" "String" true >}} | Time interval to persist messages published on the channel. If not set messages will be persisted forever. Supported units are `s`, `m`, `h`, and `d` |
 {{% /pt %}}
 
 ### Retrieve a channel
@@ -134,7 +152,7 @@ const channel = await realmq.channels.retrieve('channel-id');
 <span class="badge badge-pill badge-primary">Admin</span>
 <span class="badge badge-pill badge-primary">User</span>
 
-Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of [Channels](/docs/knowledge-base/#chat-resource).
+Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of [Channels](/docs/knowledge-base/#channel-resource).
 
 ```js
 const channelList1 = await realmq.channels.list();
@@ -181,6 +199,35 @@ const channel = await realmq.channels.remove('channel-id');
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "channelId" "String" >}} | |
+{{% /pt %}}
+
+### Retrieving channel messages
+
+<span class="badge badge-pill badge-primary">Admin</span>
+<span class="badge badge-pill badge-primary">User</span>
+
+Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of persisted messages within a [Channel](/docs/knowledge-base/#channel-resource).
+
+👉 **Note**: You have to enable channel persistence to retrieve messages from this resource.
+
+```js
+const messages = await realmq.messages.list('channel-id', {
+  offset: 10,
+  limit: 10,
+  from: '{{< isodate >}}',
+  to: '{{< isodate >}}',
+});
+```
+
+{{% pt %}}
+| Parameters |  |
+|-----------:|-------------|
+| {{< p "channelId" "String" >}} |  |
+| {{< p "options" "Object" true >}} | Additional request options |
+| {{< p "options.offset" "Number" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+| {{< p "options.limit" "Number" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+| {{< p "options.from" "Date" true >}} | Only show messages with a timestamp equal or later than this date |
+| {{< p "options.to" "Date" true >}} | Only show messages with a timestamp smaller than or equal this date |
 {{% /pt %}}
 
 ---
