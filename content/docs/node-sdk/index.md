@@ -121,7 +121,7 @@ const channel3 = await realmq.channels.create({
   features: {
     persistence: {
       enabled: true,
-      duration: "7d",
+      duration: '7d',
     },
   },
 });
@@ -217,7 +217,8 @@ Fetch a [PaginatedList](/docs/knowledge-base/#paginated-lists) of persisted mess
 👉 **Note**: You have to enable channel persistence to retrieve messages from this resource.
 
 ```js
-const messages = await realmq.messages.list('channel-id', {
+const messages = await realmq.messages.list({
+  channel: 'channel-id',
   offset: 10,
   limit: 10,
   from: '{{< isodate >}}',
@@ -229,11 +230,10 @@ const messages = await realmq.messages.list('channel-id', {
 | Parameters |  |
 |-----------:|-------------|
 | {{< p "channelId" "String" >}} |  |
-| {{< p "options" "Object" true >}} | Additional request options |
-| {{< p "options.offset" "Number" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
-| {{< p "options.limit" "Number" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
-| {{< p "options.from" "Date" true >}} | Only show messages with a timestamp equal or later than this date |
-| {{< p "options.to" "Date" true >}} | Only show messages with a timestamp smaller than or equal this date |
+| {{< p "offset" "Number" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+| {{< p "limit" "Number" true >}} | see [Pagination Params](/docs/knowledge-base/#paginated-lists) |
+| {{< p "from" "Date" true >}} | Only show messages with a timestamp equal or later than this date |
+| {{< p "to" "Date" true >}} | Only show messages with a timestamp smaller than or equal this date |
 {{% /pt %}}
 
 ---
