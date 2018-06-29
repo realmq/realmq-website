@@ -74,6 +74,12 @@ Within templates you have to reference assets via their rev mapping:
 <img src="/{{ index .Site.Data.assets "img/some-image.png" }}">
 ```
 
+There is also a short code:
+
+```html
+<img src="{{< asset "img/some-image.png" >}}">
+```
+
 ## Helpful Resources
 
 * [Hugo Page][Hugo]
