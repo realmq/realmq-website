@@ -7,7 +7,10 @@ const tildeImporter = require('node-sass-tilde-importer');
 
 const paths = {
   styles: {
-    src: 'src/scss/**/*.scss',
+    src: [
+      'src/scss/**/*.scss',
+      'node_modules/swagger-ui-dist/swagger-ui.css'
+    ],
     dest: 'static/css',
   },
   images: {
@@ -21,6 +24,13 @@ const paths = {
     ],
     dest: 'static/fonts',
   },
+  scripts: {
+    src: [
+      'node_modules/swagger-ui-dist/swagger-ui-bundle.*',
+      'node_modules/swagger-ui-dist/swagger-ui-standalone-preset.*',
+    ],
+    dest: 'static/js'
+  }
 };
 
 const buildStyles = () => gulp
@@ -36,7 +46,11 @@ const copyFonts = () => gulp
   .src(paths.fonts.src)
   .pipe(gulp.dest(paths.fonts.dest));
 
-const clean = () => del([paths.styles.dest, paths.images.dest]);
+const copyScripts = () => gulp
+  .src(paths.scripts.src)
+  .pipe(gulp.dest(paths.scripts.dest));
+
+const clean = () => del([paths.styles.dest, paths.images.dest, paths.scripts.dest]);
 
 const revision = () => gulp
   .src([
@@ -54,20 +68,20 @@ const watch = () => gulp.watch(
     paths.styles.src,
     paths.images.src,
     paths.fonts.src,
+    paths.scripts.src,
   ],
   { ignoreInitial: false },
   build
 ).on('error', () => {});
 
-
-
 gulp.task('revision', revision);
 gulp.task('scss', buildStyles);
 gulp.task('images', copyImages);
 gulp.task('fonts', copyFonts);
+gulp.task('scripts', copyScripts);
 gulp.task('clean', clean);
 
-const build = gulp.series('clean', gulp.parallel('scss', 'images', 'fonts'), 'revision');
+const build = gulp.series('clean', gulp.parallel('scss', 'images', 'fonts', 'scripts'), 'revision');
 
 gulp.task('build', build);
 gulp.task('default', build);
