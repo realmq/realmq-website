@@ -1,5 +1,34 @@
+{{ define "head-end" }}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <style type="text/css">
+    .algolia-autocomplete { width: 100%; }
+  </style>
+{{ end }}
+
+{{ define "body-end" }}
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+  <script type="text/javascript">
+    docsearch({
+      apiKey: '483914b0a073ad02215382b0d239c735',
+      indexName: 'realmq',
+      inputSelector: '#doc-search',
+      debug: false
+    });
+  </script>
+{{ end }}
+
 {{ define "main" }}
 <main class="main-content">
+  <section class="section pb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <input id="doc-search" type="text" class="form-control w-100" name="doc-search" placeholder="Search">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <div class="row gap-y">
