@@ -1,0 +1,58 @@
+---
+title: Client API
+menu:
+  docs_home:
+    name: REST API
+    pre: server-security
+  docs:
+    parent: "SDKs"
+    name: "Client API"
+---
+
+<div id="swagger-ui"></div>
+<link rel="stylesheet" type="text/css" href='{{< asset "css/swagger-ui.css" >}}'>
+<style type="text/css">
+  .swagger-ui .topbar { display: none; }
+  .swagger-ui .info { margin-top: 0; }
+  .swagger-ui .info .title pre {
+    background: none;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+  .swagger-ui .info code {
+    color: #e83e8c;
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    font-family: Source Code Pro,monospace;
+    font-weight: normal;
+  }
+  .swagger-ui table .col {
+    width: auto;
+  }
+  .swagger-ui + .wrapper { display: none; } /* hide validator badge */
+</style>
+<script src='{{< asset "js/swagger-ui-bundle.js" >}}'></script>
+<script src='{{< asset "js/swagger-ui-standalone-preset.js" >}}'></script>
+<script>
+  window.onload = function() {
+
+    // Build a system
+    const ui = SwaggerUIBundle({
+      url: 'https://api.{{< env "REALMQ_HOST" "realmq.com" >}}/client/v1/openapi.json',
+      dom_id: '#swagger-ui',
+      deepLinking: true,
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIStandalonePreset
+      ],
+      plugins: [
+        SwaggerUIBundle.plugins.DownloadUrl
+      ],
+      layout: "StandaloneLayout"
+    });
+
+    window.ui = ui
+  }
+</script>
