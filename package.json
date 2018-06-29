@@ -7,16 +7,17 @@
     "dev": "gulp watch | hugo -v server"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.5",
     "@mdi/svg": "^2.2.43",
     "bootstrap": "^4.0.0",
     "del": "^3.0.0",
     "et-line": "^1.0.1",
-    "@fortawesome/fontawesome-free-webfonts": "^1.0.5",
     "gulp": "^4.0.0",
     "gulp-rev": "^8.1.1",
     "gulp-rev-css-url": "^0.1.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
-    "node-sass-tilde-importer": "^1.0.1"
+    "node-sass-tilde-importer": "^1.0.1",
+    "swagger-ui-dist": "^3.17.1"
   }
 }
