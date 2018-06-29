@@ -17,6 +17,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/{{ index .Site.Data.assets "img/favicons/favicon-16x16.png" }}">
 
   {{ partial "matomo" . }}
+
+  {{- block "head-end" . -}}{{- end -}}
 </head>
 <body>
 
@@ -36,5 +38,6 @@
   {{ partial "footer.html" . }}
 {{- end -}}
 
+{{- block "body-end" . -}}{{- end -}}
 </body>
 </html>
