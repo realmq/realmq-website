@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content='{{ .Description }}'>
+  <meta name="keywords" content='{{ delimit .Keywords ", " }}'>
+
+  {{- block "page-title" . -}}
+  <title>{{ .Title }} | RealMQ</title>
+  {{- end -}}
+
+  <link href="/{{ index .Site.Data.assets "css/theme.css" }}" rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/{{ index .Site.Data.assets "img/favicons/apple-touch-icon.png" }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="/{{ index .Site.Data.assets "img/favicons/favicon-32x32.png" }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="/{{ index .Site.Data.assets "img/favicons/favicon-16x16.png" }}">
+
+  {{ partial "matomo" . }}
+
+  {{- block "head-end" . -}}{{- end -}}
+</head>
+<body>
+
+{{- block "main" . -}}
+<main class="main-content">
+  {{ .Content }}
+
+  {{- block "footer" . -}}
+    {{ partial "footer.html" . }}
+  {{- end -}}
+</main>
+{{- end -}}
+
+
+{{- block "body-end" . -}}{{- end -}}
+</body>
+</html>
