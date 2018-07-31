@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <main class="main-content">
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="nav flex-column">
+              {{- $currentPage := . -}}
+              {{ range .Site.Menus.legal }}
+                <a class='nav-link {{if $currentPage.IsMenuCurrent "legal" .}}active{{end}}' href="{{ .URL }}">{{ .Name }}</a>
+              {{ end }}
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            {{ .Content }}
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+{{ end }}
