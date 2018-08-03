@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content='{{ .Description }}'>
   <meta name="keywords" content='{{ delimit .Keywords ", " }}'>
+  <meta property="og:title" content="{{ .Title }}"/>
+  <meta property="og:url" content="{{ .Permalink }}"/>
+  <meta property="og:image" content='{{ index .Site.Data.assets "img/lp/shopping-bot/shopping-bot-fb-wide.png" }}'/>
+  <meta property="og:description" content="{{ .Params.ogDescription }}"/>
+  <meta property="og:type" content="website"/>
 
   {{- block "page-title" . -}}
   <title>{{ .Title }} | RealMQ</title>
