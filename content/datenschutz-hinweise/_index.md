@@ -8,7 +8,7 @@ menu:
 
 #### Datenerhebung
 
-Im Rahmen des Registrierung oder bei Nutzung des Kontaktformulars übermittelst du uns personenbezogene Daten (Vor- und Nachname, E-Mail-Adresse, ...).
+Bei Nutzung des Kontaktformulars übermittelst du uns personenbezogene Daten (Vor- und Nachname, E-Mail-Adresse). Diese werden nicht gespeichert und dienen nur zum Zwecke der Kontaktaufnahme.
 
 #### Deine Rechte
 
