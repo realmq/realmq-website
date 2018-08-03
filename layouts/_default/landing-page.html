@@ -7,7 +7,7 @@
   <meta name="keywords" content='{{ delimit .Keywords ", " }}'>
   <meta property="og:title" content="{{ .Title }}"/>
   <meta property="og:url" content="{{ .Permalink }}"/>
-  <meta property="og:image" content='/{{ index .Site.Data.assets "img/lp/shopping-bot/shopping-bot-fb-wide.png" }}'/>
+  <meta property="og:image" content='{{ index .Site.Data.assets "img/lp/shopping-bot/shopping-bot-fb-wide.png" | absURL }}'/>
   <meta property="og:description" content="{{ .Params.ogDescription }}"/>
   <meta property="og:type" content="website"/>
 
