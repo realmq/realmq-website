@@ -11,6 +11,8 @@ Friedrichstraße 123<br>
 10117 Berlin<br>
 Deutschland<br>
 
+Amtsgericht Berlin (Charlottenburg): HRB 198576B
+
 #### Geschäftsführer
 Alrik Zachert
 
