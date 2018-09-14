@@ -4,14 +4,22 @@ layout: legal
 menu:
   legal:
     name: Impressum
----
+subtitle: |
+    Anbieter im Sinne von § 5 Telemediengesetz (TMG):
 
-### RealMQ GmbH i.G.
+
+---
+### RealMQ GmbH
 Friedrichstraße 123<br>
 10117 Berlin<br>
 Deutschland<br>
 
-Amtsgericht Berlin (Charlottenburg): HRB 198576B
+#### Amtsgericht
+Berlin Charlottenburg<br>
+HRB 198576B
+
+#### USt-IdNr.
+DE319524175
 
 #### Geschäftsführer
 Alrik Zachert
