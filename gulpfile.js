@@ -30,6 +30,9 @@ const paths = {
       'node_modules/swagger-ui-dist/swagger-ui-standalone-preset.*',
     ],
     dest: 'static/js'
+  },
+  watch: {
+    src: 'src/**/*'
   }
 };
 
@@ -64,12 +67,7 @@ const revision = () => gulp
     .pipe(gulp.dest('data'));
 
 const watch = () => gulp.watch(
-  [
-    paths.styles.src,
-    paths.images.src,
-    paths.fonts.src,
-    paths.scripts.src,
-  ],
+  paths.watch.src,
   { ignoreInitial: false },
   build
 ).on('error', () => {});
