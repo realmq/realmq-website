@@ -22,7 +22,7 @@
 </head>
 <body>
 
-{{ partial "navbar/default.html" (dict "logo" (index .Site.Data.assets "img/logo.svg") "isNavFixed" false ) }}
+{{ partial "navbar/realtime-messaging-on-premise.html" (dict "logo" (index .Site.Data.assets "img/logo.svg") "isNavFixed" false ) }}
 
 {{- block "header" . -}}
   {{ partial "header.html" . }}
@@ -30,6 +30,7 @@
 
 {{- block "main" . -}}
 <main class="main-content">
+  <h2>FOO</h2>
   {{ .Content }}
 </main>
 {{- end -}}
