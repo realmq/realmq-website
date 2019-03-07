@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "build": "gulp build && hugo",
-    "dev": "gulp watch | hugo -v server"
+    "dev": "gulp watch | hugo -v server",
+    "gulp-watch": "gulp watch",
+    "hugo-server": "hugo -v server"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.5",
