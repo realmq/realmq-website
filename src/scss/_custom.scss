@@ -29,6 +29,40 @@
   background-image: url(../img/backdrop.svg);
 }
 
+
+.header.bg-consultancy {
+  //background-image: url(../img/lp/agency/coding.png);
+  background-color: lighten($color-primary, 40%);
+}
+
+.skill-logo {
+  display: inline-block;
+  margin-right: 3em;
+  text-align: center;
+  i {
+    display: inline-block;
+    font-size: 72px;
+  }
+}
+
+.testimonials img {
+  max-height: 50px;
+  margin-right: 1em;
+}
+
 .feature-icon-large i {
   font-size: 27em;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  color: $color-primary;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
