@@ -54,15 +54,15 @@
   font-size: 27em;
 }
 
-ul {
+ul.has-bullets-primary {
   list-style: none;
-}
 
-ul li::before {
-  content: "\2022";
-  color: $color-primary;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+  li::before {
+    content: "\2022";
+    color: $color-primary;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
 }
