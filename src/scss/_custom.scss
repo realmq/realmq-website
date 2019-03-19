@@ -3,6 +3,10 @@
 //----------------------------------------------------/
 @import "docs";
 
+body {
+  font-size: 1.125rem;
+}
+
 .text-primary-light {
   color: lighten($color-primary, 40%);
 }
