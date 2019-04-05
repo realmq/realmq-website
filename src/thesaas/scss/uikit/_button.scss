@@ -162,7 +162,7 @@ $btn-height-xl: 46px; //$line-height-base * 13px + 11px + 9px + 2px;
 
   &.btn-xs {
     padding-left: $btn-height-xs + 16px;
-    label { width: $btn-height-xs; }
+    label { width: $btn-height-xs; padding-top: 1px; }
   }
 
 }

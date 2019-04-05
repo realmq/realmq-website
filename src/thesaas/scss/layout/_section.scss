@@ -1,17 +1,15 @@
 
 
 .section {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  //background-color: #fff;
-  //overflow-x: hidden;
-
   position: relative;
   border-bottom: none;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   //z-index: 0;
+
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 
   > .container,
   > .container-fluid,
@@ -21,8 +19,8 @@
   }
 
   @include media-breakpoint-down(md) {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 }
 
@@ -115,15 +113,15 @@
 //----------------------------------------------------/
 .section-dialog {
   background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 1rem;
+  border-radius: 4px;
 
   @include media-breakpoint-up(md) {
-    padding: 20px 30px;
+    padding: 20px 24px;
   }
 
   @include media-breakpoint-up(lg) {
-    padding: 30px 40px;
+    padding: 30px 32px;
   }
 
 }

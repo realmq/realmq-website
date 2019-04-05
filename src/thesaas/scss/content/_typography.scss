@@ -96,13 +96,20 @@ h1, h2, h3, h4, h5, h6,
   }
 
   .anchor {
+    position: absolute;
+    right: 100%;
     opacity: 0;
-    font-size: 85%;
-    margin-left: .5rem;
+    //padding-right: 0.5rem;
+    color: $color-primary;
   }
 
+  &.anchor-visible .anchor,
   &:hover .anchor {
     opacity: 0.5;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
 }
@@ -227,6 +234,18 @@ h6, .h6 {
 hr {
   border-top-color: $color-alpha-dark-divider;
   margin: 2rem auto;
+}
+
+.hr-dash {
+  border-top-style: dashed;
+}
+
+.hr-dot {
+  border-top-style: dotted;
+}
+
+.hr-light {
+  border-top-color: $color-alpha-dark-bg-hover;
 }
 
 .mark-underline {

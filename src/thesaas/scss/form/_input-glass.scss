@@ -12,6 +12,14 @@
     font-weight: 400;
     color: $input-glass-color-text;
 
+    &.is-valid {
+      background-color: rgba($color-success, 0.2);
+    }
+
+    &.is-invalid {
+      background-color: rgba($color-danger, 0.2);
+    }
+
     &::placeholder {
       color: $input-glass-color-placeholder;
     }

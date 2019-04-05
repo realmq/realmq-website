@@ -13,6 +13,10 @@
     transform: scale(1);
   }
 
+  &:checked ~ .custom-control-label::before {
+    border-color: $color-divider;
+  }
+
   &:disabled ~ .custom-control-label {
     opacity: .7;
 
@@ -47,10 +51,12 @@
 //
 .custom-radio {
 
+  cursor: pointer;
+
   .custom-control-label::after {
-    $size: $custom-control-indicator-size - 2px;
+    $size: $custom-control-indicator-size - 0.125rem;
     top: 12px - 4px;
-    left: $size/4 + 1px;
+    left: $size/4 + 0.0625rem;
     //margin-top: -$size/4 - 2px;
     border-radius: 50%;
     width: $size/2;
@@ -64,6 +70,8 @@
 // Checkbox only
 //
 .custom-checkbox {
+
+  cursor: pointer;
 
   .custom-control-label::after {
     top: 50%;

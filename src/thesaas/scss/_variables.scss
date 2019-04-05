@@ -48,7 +48,7 @@ $color-bg-lighter:                #f9fafb !default;
 $color-bg-light:                  #f5f6f7 !default;
 $color-bg-body:                   #ffffff !default;
 $color-bg-dark:                   #191919 !default;
-$color-bg-gray:                   #fafbfb !default;//f8f8f8
+$color-bg-gray:                   #fafbfb !default;
 
 // Text colors
 $color-text-darker:               #323d47 !default;
@@ -295,6 +295,7 @@ $link-hover-decoration:     underline !default;
 // Navbar
 //
 $navbar-min-height:         56px !default;
+$navbar-offset-top:         10px !default;
 $navbar-brand-padding-y:    0 !default;
 
 $navbar-dark-color:         rgba($color-text, 0.8) !default;
@@ -360,12 +361,19 @@ $font-weight-bold:            600 !default;
 $font-weight-base:            $font-weight-light !default;
 $line-height-base:            1.9 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
+$h1-font-size:                $font-size-base * 2.75 !default;
+$h2-font-size:                $font-size-base * 2.25 !default;
+$h3-font-size:                $font-size-base * 1.875 !default;
+$h4-font-size:                $font-size-base * 1.625 !default;
+$h5-font-size:                $font-size-base * 1.3125 !default;
+$h6-font-size:                $font-size-base * 1.125 !default;
+
+$h1-font-weight:              400 !default;
+$h2-font-weight:              400 !default;
+$h3-font-weight:              400 !default;
+$h4-font-weight:              400 !default;
+$h5-font-weight:              400 !default;
+$h6-font-weight:              400 !default;
 
 $headings-margin-bottom:      ($spacer / 2) !default;
 $headings-font-family:        $font-family-title !default;
@@ -374,7 +382,7 @@ $headings-line-height:        1.5 !default;
 $headings-color:              $color-title !default;
 
 $display1-size:               5rem !default;
-$display2-size:               4.25rem !default;
+$display2-size:               4rem !default;
 $display3-size:               3.5rem !default;
 $display4-size:               3rem !default;
 
@@ -489,6 +497,7 @@ $pagination-hover-border-color:     $color-divider !default;
 
 // Popovers
 //
+$popover-font-size:                 $font-size-xs !default;
 $popover-border-color:              $color-divider-light !default;
 $popover-box-shadow:                0 2px 15px rgba(0,0,0,0.5) !default;
 
@@ -496,6 +505,12 @@ $popover-header-bg:                 $color-bg-lighter !default;
 
 $popover-arrow-width:               .6rem !default;
 $popover-arrow-height:              .3rem !default;
+
+
+// Tooltips
+//
+$tooltip-font-size:                 $font-size-xs !default;
+
 
 // Dropdowns
 //
@@ -571,7 +586,7 @@ $input-border-radius:                   2px !default;
 $input-border-radius-lg:                2px !default;
 $input-border-radius-sm:                2px !default;
 
-$custom-control-indicator-size:                 18px !default;
+$custom-control-indicator-size:                 1.125rem !default;
 
 $custom-control-indicator-bg:                   $color-bg-gray !default;
 $custom-control-indicator-box-shadow:           none !default;
@@ -610,4 +625,9 @@ $breadcrumb-bg:                     transparent !default;
 $breadcrumb-divider-color:          $color-text-lighter !default;
 $breadcrumb-active-color:           $color-text !default;
 $breadcrumb-divider:                "" !default;
+
+
+// Timeline
+//
+$timeline-color: $color-primary;
 

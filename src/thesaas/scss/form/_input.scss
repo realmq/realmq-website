@@ -54,6 +54,21 @@ select:invalid {
   display: inline-block;
 }
 
+.custom-file input {
+  cursor: pointer;
+}
+
+.custom-file-label {
+  font-size: $font-size-base;
+  color: $color-text-placeholder;
+  font-weight: 300;
+
+  &::after {
+    cursor: pointer;
+    font-weight: 400;
+  }
+}
+
 
 //----------------------------------------------------/
 // Mailer

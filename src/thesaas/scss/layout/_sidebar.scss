@@ -2,6 +2,8 @@
 .sidebar {
   display: flex;
   flex-direction: column;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 
   hr {
     margin-top: 30px;
@@ -11,6 +13,11 @@
 
   .nav-sidebar {
     height: 100%;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 }
 
@@ -30,6 +37,18 @@
     box-shadow: 0 0 15px rgba(#000, 0.05);
   }
 
+}
+
+.sidebar-sticky {
+
+  &.stick:not(.is-mobile-wide) {
+    position: fixed;
+    top: 0;
+  }
+
+  &.is-mobile-wide {
+    padding-bottom: 0 !important;
+  }
 }
 
 .sidebar-header {

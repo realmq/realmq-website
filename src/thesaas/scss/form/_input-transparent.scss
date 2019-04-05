@@ -10,6 +10,14 @@
     background-color: transparent;
     color: $input-transparent-color-text;
 
+    &.is-valid {
+      border-color: rgba($color-success, 0.4);
+    }
+
+    &.is-invalid {
+      border-color: rgba($color-danger, 0.4);
+    }
+
     &::placeholder {
       color: $input-transparent-color-placeholder;
     }

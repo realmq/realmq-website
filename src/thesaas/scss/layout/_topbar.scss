@@ -10,6 +10,8 @@
   height: 40px;
   z-index: $zindex-topbar;
 
+  display: none;
+
   > .container,
   > .container-fluid {
     display: flex;
@@ -22,11 +24,6 @@
   &.text-white {
     border-bottom-color: rgba(#fff, 0.05);
   }
-
-  body:not(.body-scrolled) &.d-lg-flex ~ .navbar {
-    top: 40px;
-  }
-
 }
 
 
@@ -38,4 +35,22 @@
   margin: 0 1rem;
   margin-bottom: 2px;
   vertical-align: middle;
+}
+
+
+body:not(.body-scrolled) .topbar {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &.d#{$infix}-flex ~ .navbar {
+      @include media-breakpoint-down($breakpoint) {
+
+      }
+
+      @include media-breakpoint-up($next) {
+        top: 40px;
+      }
+    }
+  }
 }
