@@ -3,7 +3,7 @@
 
   .card {
     background-color: #fff;
-    border: 1px solid $color-divider-light;
+    border: 1px solid $color-divider-light !important;
     margin-bottom: 16px;
 
     &:last-child {
@@ -49,26 +49,54 @@
 // Connected
 //----------------------------------------------------/
 .accordion-connected {
-
+  border: 1px solid $color-divider-light;
 
   .card {
     margin-bottom: 0;
-    border: none;
-    border-bottom: 1px solid $color-divider-light;
+    border: 0 !important;
+    border-bottom: 1px solid $color-divider-light !important;
 
     &:last-child {
-      border-bottom: 0;
+      border-bottom: 0 !important;
     }
   }
 
 
   .card-title {
     border-bottom: 0;
-    background-color: #fff;
 
     a {
       padding-top: 20px;
       padding-bottom: 20px;
+    }
+  }
+}
+
+
+//----------------------------------------------------/
+// Light
+//----------------------------------------------------/
+.accordion-light {
+  .card-title {
+    background-color: #fff;
+  }
+}
+
+
+//----------------------------------------------------/
+// Flash right
+//----------------------------------------------------/
+.accordion-arrow-right {
+
+  .card-title a {
+    padding-left: 0;
+    padding-right: 0;
+
+    &::before {
+      float: right;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 10px;
     }
   }
 }
