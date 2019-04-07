@@ -1,18 +1,20 @@
 {{- define "header" -}}
 <!-- Header -->
-<header id="home" class="header bg-consultancy">
-  <div class="overlay opacity-90" style="background-image: linear-gradient(90deg, #fff 0%, transparent 100%);"></div>
+<header id="home" class="header h-fullscreen bg-primary bg-backdrop">
   <div class="container">
     <div class="row align-items-center h-100">
       <div class="col-md">
-        <h1 class="display-4 text-primary">
-          Software Development & Consulting at your hand
+        <h1 class="display-4">
+          <img class="logo" src="/{{ index .Site.Data.assets "img/logo.svg" }}" alt="RealMQ"><br>
+          Open Source Real-time Messaging Platform
         </h1>
         <p class="lead mt-5">
-          Flexible capacity - single consultant or the whole team. We work independently or as part of your existing team.
+          RealMQ is a highly scalable, privacy compliant real-time communication backbone.
+          Our focus is to deliver great service with best possible integrability
+          while you keep full control over your data.
         </p>
         <a class="btn btn-lg btn-round btn-primary mr-2 w-200 my-7" href="#contact-us">Get in touch</a>
-        <a class="btn btn-lg btn-round btn-outline-primary w-200 my-7" href="#services">Services</a>
+        <a class="btn btn-lg btn-round btn-outline-primary w-200 my-7" href="#section-use-cases">Use cases</a>
       </div>
     </div>
   </div>
@@ -25,211 +27,305 @@
 
   <!--
   |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
-  | About us
+  | Core features
   |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
   !-->
-  <section id="team" class="section">
+  <section id="section-features" class="section">
     <div class="container">
       <header class="section-header">
-        <h2 class="text-primary">About us</h2>
+        <h2 class="text-primary">What we offer</h2>
         <hr>
         <p class="lead">
-          <span class="text-primary">RealMQ Consulting</span> are Alrik, Henning and Lars - 3 senior full-stack web developers.
-          Coming from a classic e-commerce background we expanded our scope to general custom platform development.
-          With over 30 years of combined professional IT experience we are a reliable partner for our customers.
-          Based in Berlin and Schwerin we can work remotely or on-site.
-        </p>
-      </header>
-    </div>
-  </section>
-
-  <!--
-  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
-  | Services
-  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
-  !-->
-  <section id="services" class="section bg-gray">
-    <div class="container">
-      <header class="section-header">
-        <h2 class="text-primary">Services</h2>
-        <hr>
-      </header>
-
-      <div class="row">
-        <div class="offset-md-1"></div>
-        <div class="col-md-5">
-          <h4 class="text-center">Development</h4>
-          <ul class="has-bullets-primary">
-            <li>Sustainably bootstrap your project</li>
-            <li>Extend your existing product with new features</li>
-            <li>Jump in when you need short-term man power</li>
-            <li>Migrate legacy codebases to state-of-the-art architecture</li>
-          </ul>
-        </div>
-        <div class="col-md-5">
-          <h4 class="text-center">Consultancy</h4>
-          <ul class="has-bullets-primary">
-            <li>Figure out the tricky tech parts</li>
-            <li>Design or review software architectures</li>
-            <li>Support product management</li>
-            <li>Consult and coach teams to (better) use agile processes</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--
-  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
-  | Skillset
-  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
-  !-->
-  <section id="skillset" class="section">
-    <div class="container">
-      <header class="section-header">
-        <h2 class="text-primary">Tools & Technologies</h2>
-        <hr>
-        <p class="lead">
-          For our projects we always choose from the most suitable, state of the art tools and
-          technologies. Below you'll find a comprehensive and growing list of the tools that we
-          used in the past.
+          RealMQ is your building block to add modern and reliable real-time messaging to your applications.
+          We offer full GDPR compliance and even better - we come on-premise if you want.
+          Running RealMQ on your own infrastructure, you have complete control on what data is stored,
+          and where. Additionally our licensing model includes full source code access. Our main goal is
+          to enable messaging in your application &ndash; your business, your rules.
         </p>
       </header>
 
-      <div class="row py-3">
-        <div class="col-md-3">
-          <p class="lead-2 text-right">Frontend</p>
-        </div>
-        <div class="col-md-9">
-          <span class="badge badge-primary">JavaScript</span>
-          <span class="badge badge-primary">Vue.js</span>
-          <span class="badge badge-primary">React</span>
-          <span class="badge badge-primary">Angular</span>
-          <span class="badge badge-primary">Redux</span>
-          <span class="badge badge-primary">Dojo</span>
-          <span class="badge badge-primary">jQuery</span>
-          <span class="badge badge-primary">CSS / SASS / LESS</span>
-          <span class="badge badge-primary">Bootstrap</span>
-          <span class="badge badge-primary">Webpack</span>
-          <span class="badge badge-primary">HTML 5</span>
-        </div>
-      </div>
+      <div class="row gap-y text-center">
 
-      <div class="row py-3">
-        <div class="col-md-3">
-          <p class="lead-2 text-right">Backend</p>
-        </div>
-        <div class="col-md-9">
-          <span class="badge badge-primary">Node.js</span>
-          <span class="badge badge-secondary">Express</span>
-          <span class="badge badge-secondary">Jest</span>
-          <span class="badge badge-primary">PHP</span>
-          <span class="badge badge-secondary">Zend Framework</span>
-          <span class="badge badge-secondary">Symfony</span>
-          <span class="badge badge-secondary">Yii 2</span>
-          <span class="badge badge-secondary">Doctrine ORM</span>
-          <span class="badge badge-secondary">PHPUnit</span>
-          <span class="badge badge-primary">Erlang</span>
-          <span class="badge badge-primary">MySQL / Maria DB</span>
-          <span class="badge badge-primary">PostgreSQL</span>
-          <span class="badge badge-primary">MongoDB</span>
-          <span class="badge badge-primary">Redis</span>
-          <span class="badge badge-primary">Elasticsearch</span>
-          <span class="badge badge-primary">MQTT / AMQP</span>
-          <span class="badge badge-primary">RabbitMQ</span>
-          <span class="badge badge-primary">VerneMQ</span>
-          <span class="badge badge-primary">Kafka</span>
-          <span class="badge badge-primary">OpenAPI / Swagger</span>
-          <span class="badge badge-primary">Nginx</span>
-        </div>
-      </div>
-
-      <div class="row py-3">
-        <div class="col-md-3">
-          <p class="lead-2 text-right">Patterns</p>
-        </div>
-        <div class="col-md-9">
-          <span class="badge badge-primary">CQRS</span>
-          <span class="badge badge-primary">Event Sourcing</span>
-          <span class="badge badge-primary">Micro Services</span>
-          <span class="badge badge-primary">Test Driven Development</span>
-        </div>
-      </div>
-
-      <div class="row py-3">
-        <div class="col-md-3">
-          <p class="lead-2 text-right">Tools</p>
-        </div>
-        <div class="col-md-9">
-          <span class="badge badge-primary">Docker</span>
-          <span class="badge badge-primary">Kubernetes</span>
-          <span class="badge badge-primary">Mesos / Marathon</span>
-          <span class="badge badge-primary">AWS</span>
-          <span class="badge badge-primary">Google Cloud</span>
-          <span class="badge badge-primary">Heroku</span>
-          <span class="badge badge-primary">Digital Ocean</span>
-          <span class="badge badge-primary">GitLab CI</span>
-          <span class="badge badge-primary">Jenkins</span>
-          <span class="badge badge-primary">Travis CI</span>
-          <span class="badge badge-primary">Bash Scripting</span>
-          <span class="badge badge-primary">Ansible / Puppet / Vagrant</span>
-          <span class="badge badge-primary">Linux / Ubuntu</span>
-          <span class="badge badge-primary">Scrum</span>
-          <span class="badge badge-primary">Kanban</span>
-        </div>
-      </div>
-
-      <div class="row py-3">
-        <div class="col-md-3">
-          <p class="lead-2 text-right">Software</p>
-        </div>
-        <div class="col-md-9">
-          <span class="badge badge-primary">JIRA / Confluence</span>
-          <span class="badge badge-primary">Magento</span>
-          <span class="badge badge-primary">Shopware</span>
-          <span class="badge badge-primary">Wordpress</span>
-        </div>
-      </div>
-
-      <div class="row py-3">
-        <div class="col-md-3">
-          <p class="lead-2 text-right">Coaching</p>
-        </div>
-        <div class="col-md-9">
-          <span class="badge badge-primary">Certified Scrum Master</span>
-          <span class="badge badge-primary">Scrum</span>
-          <span class="badge badge-primary">Kanban</span>
-          <span class="badge badge-primary">Product Management</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--
-  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
-  | Customers
-  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
-  !-->
-  <section id="customers" class="section bg-gray">
-    <div class="container">
-      <header class="section-header">
-        <h2 class="text-primary">Companies we worked with</h2>
-        <hr>
-      </header>
-
-      <div class="row">
-        <div class="col-12">
-          <p class="lead testimonials text-center">
-            <img src="/{{ index .Site.Data.assets "img/lp/agency/dialog-works-logo.png" }}" alt="Dialog works logo" />
-            <img src="/{{ index .Site.Data.assets "img/lp/agency/flexperto-logo.png" }}" alt="Flexperto logo" />
-            <img src="/{{ index .Site.Data.assets "img/lp/agency/yeay-logo.png" }}" alt="Yeay logo" />
-            <img src="/{{ index .Site.Data.assets "img/lp/agency/mdk-logo.png" }}" alt="Mdk logo" />
-            <img src="/{{ index .Site.Data.assets "img/lp/agency/halvtone-logo.png" }}" alt="halvtone logo" />
-            <img src="/{{ index .Site.Data.assets "img/lp/agency/pamono-logo.png" }}" alt="Pamono logo" />
-            <img src="/{{ index .Site.Data.assets "img/lp/agency/sowhat-logo.png" }}" alt="Sowhat logo" />
-            <img src="/{{ index .Site.Data.assets "img/lp/agency/excentos-logo.png" }}" alt="Excentos logo" />
-            <img src="/{{ index .Site.Data.assets "img/lp/agency/erento-logo.png" }}" alt="Erento logo" />
+        <div class="col-md-6 col-xl-4 feature-1">
+          <p class="feature-icon text-primary"><i class="icon-shield"></i></p>
+          <h5>Privacy / GDPR</h5>
+          <p>
+            RealMQ is fully GDPR compliant, based in Germany and therefore adheres to German and EU
+            privacy regulations. Our infrastructure is located in the EU.
           </p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4 feature-1">
+          <p class="feature-icon text-warning"><i class="icon-lock"></i></p>
+          <h5>Data Ownership</h5>
+          <p>
+            You have full control over your data and decide what is stored how, when, and where.
+          </p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4 feature-1">
+          <p class="feature-icon text-info"><i class="icon-expand"></i></p>
+          <h5>Integration</h5>
+          <p>
+            RealMQ integrates seamlessly with any application stack. We provide SDKs for all relevant
+            platforms.
+          </p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4 offset-xl-2 feature-1">
+          <p class="feature-icon text-danger"><i class="icon-tools"></i></p>
+          <h5>Customization</h5>
+          <p>Do you need custom functionality? We make it happen for you.</p>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4 feature-1">
+          <p class="feature-icon text-dark"><i class="icon-download"></i></p>
+          <h5>Dedicated / On premise</h5>
+          <p>
+            RealMQ can run as fully managed dedicated service or on-premise on your infrastructure.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | Use case scenarios
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section id="section-use-cases" class="section bg-gray">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="text-primary">Common Use Cases</h2>
+        <hr>
+      </header>
+
+      <div class="row">
+        <div class="col-md-6">
+          <p class="feature-icon-large text-center text-primary-light"><i class="fas fa-comments"></i></p>
+        </div>
+        <div class="col-md-6 text-justify">
+          <h4>Chat</h4>
+          <p>
+            If asked for a use case for real-time messaging most people will answer: chat! Traditional
+            chat systems are a natural fit for RealMQ. It just needs a thin business layer on top of
+            RealMQ and some smart client side semantics. Luckily we provide some expressive recipes
+            and reference implementations.
+          </p>
+          <dl>
+            <dt>Instant Messaging</dt>
+            <dd>
+              Connect your users with direct chat and some social flavour to your application.
+              Create classic instant messaging experiences we all know, like WhatsApp and co.
+            </dd>
+
+            <dt>Group Chat</dt>
+            <dd>
+              Build chat systems for organizations and communities and their internal peer groups.
+            </dd>
+
+            <dt>In Game Chat</dt>
+            <dd>
+              Let the users of your online games chat with each other in lobbies and running game sessions.
+            </dd>
+
+            <dt>Bots</dt>
+            <dd>
+              Automated chat systems help you to build a faster and more responsive communication with your users.
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <hr class="my-8">
+
+      <div class="row gap-y align-items-center">
+        <div class="col-md-6 text-justify">
+          <h4>Complex Role Based Chat Systems</h4>
+          <p>
+            Sometimes classic chat tools aren’t enough. You may want to dispatch support requests,
+            implement a multi stage flow with alternating chat partners, or build an interactive
+            chat menu to route the chat to the right department. With RealMQ you can implement all
+            of them - the limit is your imagination.
+          </p>
+          <dl>
+            <dt>Routing</dt>
+            <dd>
+              Build interactive support systems where incoming requests are automatically dispatched
+              to available members of your support team.
+            </dd>
+
+            <dt>Multi Channel</dt>
+            <dl>
+              Receive and send messages over a wide variety of channels like SMS, Email, or Twitter
+            </dl>
+
+            <dt>Complex Flows</dt>
+            <dl>
+              Project complex customer journeys onto something simple like a chat. Alternating chat
+              partners guide the customer through relevant stages of a sales conversation.
+            </dl>
+          </dl>
+        </div>
+
+        <div class="col-md-6">
+          <p class="feature-icon-large text-center text-primary-light"><i class="fas fa-users"></i></p>
+        </div>
+      </div>
+
+      <hr class="my-8">
+
+      <div class="row gap-y align-items-center">
+        <div class="col-md-6">
+          <p class="feature-icon-large text-center text-primary-light"><i class="fas fa-bolt"></i></p>
+        </div>
+        <div class="col-md-6 text-justify">
+          <h4>Real-time Events</h4>
+          <p>
+            Today people are used to real time updates and immediate notifications on important
+            events. They expect instant feedback on all their devices like mobile phone, laptop, or
+            tablet when interacting with the digital world. Real-time events are the key.
+          </p>
+
+          <dl>
+            <dt>Location Updates</dt>
+            <dd>
+              Keep clients updated on their delivery status and tell them the exact position of an
+              ordered item.
+            </dd>
+
+            <dt>Real-time Databases</dt>
+            <dd>
+              Synchronize data accross multiple distributed devices.
+            </dd>
+
+            <dt>eCommerce</dt>
+            <dd>
+              Show visitors on your shop website real-time updates on prices, special offers, or other
+              relevant information to turn them into happy customers.
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <hr class="my-8">
+
+      <div class="row gap-y align-items-center">
+        <div class="col-md-6 text-justify">
+          <h4>Signaling / IoT</h4>
+          <p>
+            In a world where everything is connected, more and more devices are able to participate
+            in the Internet of Things. RealMQ's slim and battle proven MQTT protocol ensures that
+            your devices can talk to each other.
+          </p>
+          <dl>
+            <dt>Home Automation</dt>
+            <dd>
+              Smart home devices talk to each other and synchronize data.
+              E.g. ‘Turn down the heating when the temperature rises’.
+            </dd>
+
+            <dt>Smart Sensors</dt>
+            <dd>
+              Measure air quality or water levels and forward results to your central data collector.
+            </dd>
+
+            <dt>Predictive Maintenance</dt>
+            <dd>
+              Let your devices tell you when they are about to break.
+            </dd>
+          </dl>
+        </div>
+
+        <div class="col-md-6">
+          <p class="feature-icon-large text-center text-primary-light"><i class="fas fa-wifi"></i></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!--
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  | Pricing
+  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+  !-->
+  <section id="section-pricing" class="section">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="text-primary">Pricing</h2>
+      </header>
+
+      <div class="row gap-y text-center">
+        <div class="col-md-4">
+          <div class="pricing-1">
+            <p class="plan-name">Sandbox</p>
+            <br>
+            <h2 class="price">free</h2>
+            <p class="small text-lighter">Forever!</p>
+
+            <div class="text-muted">
+              <small>Shared developer sandbox</small><br>
+              <small>Limited resources</small><br>
+            </div>
+
+            <br>
+            <p class="text-center py-3"><a class="btn btn-outline-primary" href="#contact-us">Get started</a></p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pricing-1 popular">
+            <p class="plan-name">Managed</p>
+            <br>
+            <h2 class="price text-success">
+              <span class="price-unit">From $</span>
+              <span>500</span>
+            </h2>
+            <p class="small text-lighter">
+              billed monthly
+            </p>
+
+            <div class="text-muted">
+              <small>Runs on dedicated hardware</small><br>
+              <small>No limitations</small><br>
+              <small>Custom setup possible</small><br>
+            </div>
+
+            <br>
+            <p class="text-center py-3"><a class="btn btn-success" href="#contact-us">Get started</a></p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pricing-1">
+            <p class="plan-name">On Premise</p>
+            <br>
+            <h2 class="price">
+              <span class="price-unit">From $</span>
+              <span>3k</span>
+            </h2>
+            <p class="small text-lighter">
+              billed monthly
+            </p>
+
+            <div class="text-muted">
+              <small>Runs on your servers</small><br>
+              <small>100% Compliance</small><br>
+              <small>Source Code Access</small><br>
+              <small>Custom SLA</small><br>
+            </div>
+
+            <br>
+            <p class="text-center py-3"><a class="btn btn-outline-primary" href="#contact-us">Get started</a></p>
+          </div>
         </div>
       </div>
     </div>
@@ -240,7 +336,7 @@
   | Contact
   |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
   !-->
-  <section class="section" id="contact-us">
+  <section class="section bg-gray" id="contact-us">
     <div class="container">
       <h2 class="text-center text-primary">Sounds interesting to you? We'd love to get in touch.</h2>
       <form class="row gap-y mt-8" netlify>
@@ -256,7 +352,7 @@
           </div>
 
           <div class="form-group">
-            <textarea class="form-control form-control-lg" rows="4" placeholder="How can we help?" name="message"></textarea>
+            <textarea class="form-control form-control-lg" rows="4" placeholder="Tell us what you think." name="message"></textarea>
           </div>
 
           <button class="btn btn-lg btn-primary" type="submit">Send message</button>

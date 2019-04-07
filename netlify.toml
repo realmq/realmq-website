@@ -11,3 +11,7 @@ Cache-Control = "public, max-age=31536000, immutable"
 [[redirects]]
   from = "/shopping-bot"
   to = "/bereit-fuer-shopping-bot-revolution"
+
+[[redirects]]
+  from = "/realtime-messaging-on-premise"
+  to = "/"

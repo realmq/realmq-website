@@ -1,7 +1,4 @@
 ---
-title: "Software Development & Consulting"
+title: "Open Source Real-Time Messaging Platform"
 description: ""
-keywords:
-    - Software Development
-    - Software Consulting
 ---
