@@ -7,3 +7,6 @@ enableEmoji = true
 pygmentsCodeFences = true
 pygmentsStyle = "trac"
 enableRobotsTXT = true
+
+disableKinds = ["taxonomyTerm"]
+
