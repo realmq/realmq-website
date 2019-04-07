@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg bg-white navbar-{{if .theme}}{{.theme}}{{else}}dark{{end}}" {{ if .isNavFixed }}data-navbar="fixed"{{end}}>
+  <div class="container">
+
+    <div class="navbar-left">
+      <button class="navbar-toggler" type="button">&#9776;</button>
+      <a class="navbar-brand" href="/">
+        <img class="logo" src="/{{ .logo }}" alt="RealMQ">
+      </a>
+    </div>
+
+    <section class="navbar-mobile">
+      <nav class="nav nav-navbar ml-auto">
+        <a class="nav-link" href="#home">Software Development &amp; Consultancy</a>
+        <div class="nav-item">
+          <a class="nav-link" href="#team">About us</a>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skillset">Skillset</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#customers">Customers</a>
+            </li>
+          </ul>
+        </div>
+        <a class="nav-link" href="#contact-us">Contact</a>
+        <div class="nav-item">
+          <a class="nav-link" href="/">Products</a>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Real-time Platform</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+  </div>
+</nav>
