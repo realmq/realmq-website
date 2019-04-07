@@ -1,3 +1,4 @@
+const {writeFileSync} = require('fs');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const del = require('del');
@@ -59,6 +60,7 @@ const revision = () => gulp
   .src([
     'static/**/*.*',
     `!static/**/*-${'[0-9a-f]'.repeat(10)}.*`,
+    '!static/__build-time'
   ])
     .pipe(rev())
     .pipe(revReplace())
@@ -79,7 +81,16 @@ gulp.task('fonts', copyFonts);
 gulp.task('scripts', copyScripts);
 gulp.task('clean', clean);
 
-const build = gulp.series('clean', gulp.parallel('scss', 'images', 'fonts', 'scripts'), 'revision');
+gulp.task('write-build-time', function (cb) {
+  // wait one sec to give hugo some time to react on changes.
+  setTimeout(() => {
+    writeFileSync('./static/__build-time', (new Date).toISOString());
+
+    cb();
+  }, 500);
+});
+
+const build = gulp.series('clean', gulp.parallel('scss', 'images', 'fonts', 'scripts'), 'revision', 'write-build-time');
 
 gulp.task('build', build);
 gulp.task('default', build);
