@@ -6,7 +6,7 @@
     "build": "gulp build && hugo",
     "dev": "gulp watch | hugo -v server",
     "gulp-watch": "gulp watch",
-    "hugo-server": "hugo -v server"
+    "hugo-server": "hugo -v server --forceSyncStatic"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
