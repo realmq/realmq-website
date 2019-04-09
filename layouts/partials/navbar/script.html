@@ -1,0 +1,28 @@
+<script type="text/javascript">
+  (function() {
+    var $body = document.body;
+    var $toggle = document.querySelector('.navbar-toggler');
+
+    function closeNav(event) {
+      if (event.type === 'click' || (event.type === 'keyup' && event.key === 'Escape')) {
+        $body.removeEventListener('keyup', closeNav);
+        $body.removeEventListener('click', closeNav);
+
+        $body.classList.remove('navbar-open');
+      }
+    }
+
+    function openNav(event) {
+      $body.classList.add('navbar-open');
+
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+
+      $body.addEventListener('click', closeNav);
+      $body.addEventListener('keyup', closeNav);
+    }
+
+    $toggle.addEventListener('click', openNav);
+  })();
+</script>
