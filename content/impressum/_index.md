@@ -10,13 +10,13 @@ subtitle: |
 
 ---
 ### RealMQ GmbH
-Friedrichstraße 123<br>
-10117 Berlin<br>
+Lindow 19<br>
+15848 Friedland<br>
 Deutschland<br>
 
 #### Amtsgericht
-Berlin Charlottenburg<br>
-HRB 198576B
+Frankfurt Oder<br>
+HRB 18981B
 
 #### USt-IdNr.
 DE319524175
