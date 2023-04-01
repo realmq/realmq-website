@@ -1,6 +1,6 @@
 const {writeFileSync} = require('fs');
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const del = require('del');
 const rev = require('gulp-rev');
 const revReplace = require('gulp-rev-css-url');
